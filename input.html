@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/default.min.css">
+    <style>
+      body {
+        margin: 0px;
+        overflow-x: hidden;
+      }
+      pre {
+        margin-top: -16px;
+      }
+      code {
+        margin-top: -16px;
+        margin-left: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <pre>
+      <code >
+      </code>
+    </pre>
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+
+      function loadSpec(spec) {
+        fetch(spec).then(response=>{
+          return response.text();
+        }).then(code=>{
+          $('code').remove();
+          $('pre').append('<code class="javascript"></code>');
+          $('code').html(code);
+          $('pre code:not(.hljs)').each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
