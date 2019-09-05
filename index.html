@@ -306,7 +306,7 @@
     <script>
       function load(spec){
         document.getElementsByTagName('iframe')[0].contentWindow.loadSpec(spec);
-        fetch('/html/output.html').then(response=>{
+        fetch('/output.html').then(response=>{
           return response.text();
         }).then(html=>{
           html = html.replace(/<!---->/,
