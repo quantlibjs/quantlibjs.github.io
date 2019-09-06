@@ -8,10 +8,10 @@ import { version } from '/ql.mjs';
  * 
  * type your code inside `playground` code block
  * 
- * use to `print()` to display text
+ * use `print()` to display single line of text on right panel
  * when you're done, click `quantlib.js` on the menu
  * 
- * you may refer to `test-suite`, and `examples`
+ * you may refer to code under `test-suite` menu, and `examples` menu
  * 
  * have fun!
  */
