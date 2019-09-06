@@ -11,4 +11,4 @@ Select a test `spec` or `example` from top menu
 
 >i'm trying to use jasmine to run example like a spec, but it seems the output is out of order, will fix it later.
 
-my contact: quantlib.js@gmail.com
+my contact: quantlib.js@outlook.com
