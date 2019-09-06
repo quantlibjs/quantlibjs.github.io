@@ -79,7 +79,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     hideDisabled: queryString.getParam("hideDisabled")
   };
 
-  var random = undefined; //queryString.getParam("random");
+  var random = false; //queryString.getParam("random");
 
   if (random !== undefined && random !== "") {
     config.random = random;
