@@ -302,7 +302,7 @@ jasmineRequire.html = function(j$) {
           if (resultNode.type === 'suite') {
             var suiteListNode = createDom('ul', {className: 'jasmine-suite', id: 'suite-' + resultNode.result.id},
               createDom('li', {className: 'jasmine-suite-detail jasmine-' + resultNode.result.status},
-                createDom('a', {href: specHref(resultNode.result)}, resultNode.result.description)
+                createDom('a', undefined /*{href: specHref(resultNode.result)}*/, resultNode.result.description)
               )
             );
   

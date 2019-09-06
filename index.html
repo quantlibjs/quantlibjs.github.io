@@ -32,10 +32,10 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand">quantlib.js</a>
+      <a class="navbar-brand" onclick="play();">quantlib.js</a>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" onclick="load('/get_started.mjs');">get started</a>
+            <a class="nav-link" onclick="load('/play.mjs');">playground</a>
           </li>
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -275,13 +275,13 @@
                 <a class="dropdown-item" onclick="load('/examples/fittedbondcurve.mjs');">fitted bond curve</a>
                 <a class="dropdown-item" onclick="load('/examples/fra.mjs');">fra</a>
                 <a class="dropdown-item" onclick="load('/examples/gaussian1dmodels.mjs');">gaussian 1d models</a>
-                <a class="dropdown-item" onclick="load('/examples/globaloptimizers.mjs');">global optimizer</a>
+                <a class="dropdown-item" onclick="load('/examples/globaloptimizer.mjs');">global optimizer</a>
                 <a class="dropdown-item" onclick="load('/examples/latentmodel.mjs');">latent model</a>
                 <a class="dropdown-item" onclick="load('/examples/marketmodels.mjs');">market models</a>
                 <a class="dropdown-item" onclick="load('/examples/multidimintegral.mjs');">multi dim integral</a>
                 <a class="dropdown-item" onclick="load('/examples/replication.mjs');">replication</a>
                 <a class="dropdown-item" onclick="load('/examples/repo.mjs');">repo</a>
-                <a class="dropdown-item" onclick="load('/examples/swapvalution.mjs');">swap valuation</a>
+                <a class="dropdown-item" onclick="load('/examples/swapvaluation.mjs');">swap valuation</a>
               </ul>
           </li>
           <li class="nav-item">
@@ -304,8 +304,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
       function load(spec){
-        document.getElementsByTagName('iframe')[0].contentWindow.loadSpec(spec);
-        fetch('/output.html').then(response=>{
+        document.getElementsByTagName('iframe')[0].contentWindow.loadSpec(spec).then(()=>{
+          fetch('/html/output.html').then(response=>{
           return response.text();
         }).then(html=>{
           html = html.replace(/<!---->/,
@@ -314,9 +314,23 @@
           idoc.write(html);
           idoc.close();
         });
+        });
+      }
+
+      function play() {
+        const code = document.getElementsByTagName('iframe')[0].contentWindow.getCode();
+        fetch('/html/output.html').then(response=>{
+          return response.text();
+        }).then(html=>{
+          html = html.replace(/<!---->/,
+            `<script type=\"module\">\n${code}\n<\/script>`);
+          const idoc = document.getElementsByTagName('iframe')[1].contentWindow.document;
+          idoc.write(html);
+          idoc.close();
+        });
       }
       
-      load('/get_started.mjs');
+      load('/play.mjs');
     </script>
   </body>
 </html>
