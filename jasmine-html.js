@@ -173,7 +173,7 @@ jasmineRequire.html = function(j$) {
         var i;
         alert.appendChild(createDom('span', {className: 'jasmine-duration'}, 'finished in ' + timer.elapsed() / 1000 + 's'));
   
-        banner.appendChild(optionsMenu(config()));
+        // banner.appendChild(optionsMenu(config()));
   
         if (stateBuilder.specsExecuted < totalSpecsDefined) {
           var skippedMessage = 'Ran ' + stateBuilder.specsExecuted + ' of ' + totalSpecsDefined + ' specs - run all';
@@ -326,7 +326,7 @@ jasmineRequire.html = function(j$) {
                   className: 'jasmine-' + resultNode.result.status,
                   id: 'spec-' + resultNode.result.id
                 },
-                createDom('a', {href: specHref(resultNode.result)}, specDescription)
+                createDom('a', undefined /*{href: specHref(resultNode.result)}*/, specDescription)
               )
             );
           }
