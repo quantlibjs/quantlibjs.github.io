@@ -1,8 +1,10 @@
+[![Twitter Follow](https://img.shields.io/twitter/follow/quantlibjs.svg?style=social&maxAge=3600)](https://twitter.com/quantlibjs)
+
 # quantlib.js
 
 ## get started
 
-#### use modern web browser to open https://quantlib.js.org
+#### open https://quantlib.js.org with morden web browsers, chrome, firefox, etc...
 
 #### select a test `spec` or `example` from top menu
 ![snap1](/64322073-6c73a980-cff4-11e9-9433-3928631538f4.png)
@@ -13,10 +15,20 @@
 >this is a working in progress project, the lib itself, test cases and examples are not complete
 
 
-## Installation
-code is not in npm or other package repo, as this is a on going project, code is located at https://quantlib.js.org/ql.mjs
+## install
+the library is not in `npm` or other package repo yet, file can be downloaded from https://quantlib.js.org/ql.mjs
 
 for now it's recommended to test using quantlib.js.org website
+
+## usage
+
+this library is still at early stage, many test cases fails, it's for enthusiast only.
+
+### assumption
+
+* this project assumes `user` is already familiar with the `c++` [QuantLib](https://github.com/lballabio/QuantLib)
+
+* as `typescript`/`javascript` and `c++` are completely different languages, it's very difficult to explain all the details. for now, please refer to [test-suite](https://github.com/quantlibjs/test-suite), and [examples](https://github.com/quantlibjs/examples) code
 
 ### web browser
 
@@ -42,11 +54,18 @@ const obj=new someclass();
 obj.dosomething();
 ```
 
+### typescript
+`ql.d.ts` file will be published later
+
+## doc
+
+the generated doc from source code is not as good as official c++ QuantLib documentation, so we might not publish docs at all, please refer to offical c++ quantlib doc: https://www.quantlib.org/reference/
+
 ## test suite
 
 repo: https://github.com/quantlibjs/test-suite
 
-following the `c++` [quantlib](https://www.quantlib.org/)[test-suite](https://github.com/lballabio/QuantLib/tree/master/test-suite) code, converted to js code
+following the `c++` [quantlib](https://www.quantlib.org/) [test-suite](https://github.com/lballabio/QuantLib/tree/master/test-suite) code, converted to js code
 
 ## example
 
