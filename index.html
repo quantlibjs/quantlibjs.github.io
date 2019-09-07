@@ -316,10 +316,10 @@
     <div class="containter">
       <div class="row">
         <div class="col-6 embed-responsive embed-responsive-1by1"">
-          <iframe class="embed-responsive-item" src="/input.html"></iframe>
+          <iframe id="input" class="embed-responsive-item" src="/input.html"></iframe>
         </div>
         <div class="col-6 embed-responsive embed-responsive-1by1">
-          <iframe class="embed-responsive-item" src="/output.html?spec=&random=false"></iframe>
+          <iframe id="output" class="embed-responsive-item" src="/output.html?spec=&random=false"></iframe>
         </div>
       </div>
     </div>
@@ -328,16 +328,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
       function load(spec){
-        document.getElementsByTagName('iframe')[0].contentWindow.loadSpec(spec).then(()=>{
-          fetch('/output.html').then(response=>{
-          return response.text();
-        }).then(html=>{
-          html = html.replace(/<!---->/,
-            `<script type=\"module\" src=\"${spec}\"><\/script>`);
-          const idoc = document.getElementsByTagName('iframe')[1].contentWindow.document;
-          idoc.write(html);
-          idoc.close();
-        });
+        $('#input').load(()=>{
+          document.getElementsByTagName('iframe')[0].contentWindow.loadSpec(spec).then(()=>{
+            fetch('/output.html').then(response=>{
+              return response.text();
+            }).then(html=>{
+              html = html.replace(/<!---->/,
+              `<script type=\"module\" src=\"${spec}\"><\/script>`);
+              const idoc = document.getElementsByTagName('iframe')[1].contentWindow.document;
+              idoc.write(html);
+              idoc.close();
+            });
+          });
         });
       }
 
@@ -354,7 +356,9 @@
         });
       }
       
-      load('/get_started.mjs');
+      $(document).ready(()=> { 
+        load('/get_started.mjs');
+      });
     </script>
   </body>
 </html>
