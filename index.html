@@ -329,18 +329,18 @@
     <script>
       function load(spec){
 
-          document.getElementsByTagName('iframe')[0].contentWindow.loadSpec(spec).then(()=>{
+          document.getElementById('intput').contentWindow.loadSpec(spec).then(()=>{
             fetch('/output.html').then(response=>{
               return response.text();
             }).then(html=>{
               html = html.replace(/<!---->/,
               `<script type=\"module\" src=\"${spec}\"><\/script>`);
-              const idoc = document.getElementsByTagName('iframe')[1].contentWindow.document;
+              const idoc = document.getElementById('output').contentWindow.document;
               idoc.write(html);
               idoc.close();
             });
           });
-          
+
       }
 
       function play() {
