@@ -75,4 +75,5 @@ following the `c++` [quantlib](https://www.quantlib.org/) [Examples](https://git
 
 ## Support
 * Follow us on Twitter: @quantlibjs
-* Email: quantlib.js@outlook.com
+* Google group: https://groups.google.com/d/forum/quantlibjs
+* Group email: quantlibjs@googlegroup.com
