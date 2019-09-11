@@ -1,5 +1,7 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/quantlibjs.svg?style=social&maxAge=3600)](https://twitter.com/quantlibjs)
 
+[![](https://data.jsdelivr.com/v1/package/npm/@quantlib/ql/badge)](https://www.jsdelivr.com/package/npm/@quantlib/ql)
+
 # quantlib.js
 
 ## get started
@@ -16,9 +18,14 @@
 
 
 ## install
-the library is not in `npm` or other package repo yet, file can be downloaded from https://quantlib.js.org/ql.mjs
 
-for now it's recommended to test using quantlib.js.org website
+### CDN
+https://cdn.jsdelivr.net/npm/@quantlib/ql/ql.mjs
+
+### npm
+```
+npm install @quantlib/ql
+```
 
 ## usage
 
