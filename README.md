@@ -1,8 +1,5 @@
-[![Twitter Follow](https://img.shields.io/twitter/follow/quantlibjs.svg?style=social&maxAge=3600)](https://twitter.com/quantlibjs)
 
-[![](https://data.jsdelivr.com/v1/package/npm/@quantlib/ql/badge)](https://www.jsdelivr.com/package/npm/@quantlib/ql)
-
-# quantlib.js
+# quantlib.js [![](https://data.jsdelivr.com/v1/package/npm/@quantlib/ql/badge)](https://www.jsdelivr.com/package/npm/@quantlib/ql) [![Twitter Follow](https://img.shields.io/twitter/follow/quantlibjs.svg?style=social&maxAge=3600)](https://twitter.com/quantlibjs)
 
 ## get started
 
@@ -20,7 +17,9 @@
 ## install
 
 ### CDN
-https://cdn.jsdelivr.net/npm/@quantlib/ql/ql.mjs
+
+* latest version: https://cdn.jsdelivr.net/npm/@quantlib/ql/ql.mjs
+* specific version: https://cdn.jsdelivr.net/npm/@quantlib/ql@x.y.z/ql.mjs
 
 ### npm
 ```
@@ -41,7 +40,7 @@ this library is still at early stage, many test cases fails, it's for enthusiast
 
 ```html
 <script type="module">
-    import {someclass} from '/pathto/ql.mjs'
+    import {someclass} from 'https://cdn.jsdelivr.net/npm/@quantlib/ql/ql.mjs'
     const obj=new someclass();
     obj.dosomething();
 </script>
@@ -56,7 +55,7 @@ node --experimental-modules test.mjs
 
 in `test.mjs`
 ```js
-import {someclass} from 'pathto/ql.mjs'
+import {someclass} from '@quantlib/ql/ql.mjs'
 const obj=new someclass();
 obj.dosomething();
 ```
@@ -82,5 +81,6 @@ following the `c++` [quantlib](https://www.quantlib.org/) [Examples](https://git
 
 ## Support
 * Follow us on Twitter: @quantlibjs
-* Google group: https://groups.google.com/d/forum/quantlibjs
+* Follow us on Facebook: https://www.facebook.com/quantlibjs/
+* Google group: https://groups.google.com/d/forum/quantlibjs/
 * Group email: quantlibjs@googlegroup.com
