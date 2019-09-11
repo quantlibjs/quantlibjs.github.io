@@ -160,9 +160,3 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 function print(msg) {
   it(msg, () => {expect(1).toEqual(1)});
 }
-function example(app, fn) {
-  describe(app, fn);
-}
-function playground(app, fn) {
-  describe(app, fn);
-}

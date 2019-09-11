@@ -7,7 +7,8 @@
     <title>quantlib.js - working in progress</title>
     <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/npm/jasmine-core@3.1.0/images/jasmine_favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/default.min.css">
+    
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@quantlibjs">
@@ -36,11 +37,8 @@
 
       gtag('config', 'UA-87290595-1');
     </script>
-
+    
     <style>
-      body {
-        overflow-x: hidden;
-      }
       .navbar-nav li:hover > ul.dropdown-menu {
             display: block;
         }
@@ -90,7 +88,7 @@
                 <li class="dropdown-submenu">
                     <a class="dropdown-item" tabindex="-1" href="#">date & time <b class="caret-right"></b></a>
                     <ul class="dropdown-menu">
-                      <a class="dropdown-item" onclick="load('/test-suite/businessdayconventions.mjs');">business day convention</a>
+                      <a class="dropdown-item" onclick="load('/test-suite/businessdayconventions.mjs');">business day conventions</a>
                       <a class="dropdown-item" onclick="load('/test-suite/calendars.mjs');">calendars</a>
                       <a class="dropdown-item" onclick="load('/test-suite/dates.mjs');">dates</a>
                       <a class="dropdown-item" onclick="load('/test-suite/daycounters.mjs');">day counters</a>
@@ -343,51 +341,57 @@
               </ul>
           </li>
           <li class="nav-item">
-              <a class="nav-link" onclick="load('/wip.mjs');">benchmark</a>
+              <a class="nav-link">blog</a>
           </li>
         </ul>
       </div>
     </nav>
     <div class="containter">
-      <div class="row">
-        <div class="col-6 embed-responsive embed-responsive-1by1"">
-          <iframe id="spec" class="embed-responsive-item" src="/spec.html"></iframe>
+      <div class="row no-gutters">
+        <div class="col-6"">
+          <pre><code></code></pre>
         </div>
-        <div class="col-6 embed-responsive embed-responsive-1by1">
-          <iframe id="report" class="embed-responsive-item" src=""></iframe>
+        <div id="report" class="col-6 embed-responsive embed-responsive-1by1">
         </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
     <script>
+      hljs.initHighlightingOnLoad();
+
       function load(spec){
-        document.getElementById('spec').contentWindow.loadSpec(spec).then(()=>{
+        fetch(spec).then(response=>{
+          return response.text();
+        }).then(code=>{
+          $('code').remove();
+          $('pre').append('<code class="javascript"></code>');
+          $('code').html(code);
+          $('pre code:not(.hljs)').each((i, block) => {
+            hljs.highlightBlock(block);
+          });
+          $('#report').empty();
+          $('#report').append('<iframe class="embed-responsive-item"></iframe>');
+        }).then(()=>{
           fetch('/report.html').then(response=>{
             return response.text();
           }).then(html=>{
             html = html.replace(/<!---->/,
             `<script type=\"module\" src=\"${spec}\"><\/script>`);
-            const idoc = document.getElementById('report').contentWindow.document;
-            idoc.write(html);
-            idoc.close();
+            const doc = document.getElementsByTagName('iframe')[0].contentWindow.document;
+            doc.write(html);
+            doc.close();
           });
+        }).catch(error=>{
+          console.log(`load error: ${error.message}`);
         });
       }
 
-      function play() {
-        const code = document.getElementsByTagName('iframe')[0].contentWindow.getCode();
-        fetch('/report.html').then(response=>{
-          return response.text();
-        }).then(html=>{
-          html = html.replace(/<!---->/,
-            `<script type=\"module\">\n${code}\n<\/script>`);
-          const idoc = document.getElementsByTagName('iframe')[1].contentWindow.document;
-          idoc.write(html);
-          idoc.close();
-        });
-      }
+      $(document).ready(()=> {
+        load('/get_started.mjs');
+      });
     </script>
   </body>
 </html>
