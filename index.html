@@ -71,7 +71,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" onclick="load('/get_started.mjs');">get started</a>
+            <a class="nav-link" onclick="load('https://cdn.jsdelivr.net/npm/@quantlib/misc/get_started.mjs');">get started</a>
           </li>
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -375,7 +375,7 @@
           $('#report').empty();
           $('#report').append('<iframe class="embed-responsive-item"></iframe>');
         }).then(()=>{
-          fetch('/report.html').then(response=>{
+          fetch('https://cdn.jsdelivr.net/npm/@quantlib/misc/report.html').then(response=>{
             return response.text();
           }).then(html=>{
             html = html.replace(/<!---->/,
@@ -390,7 +390,7 @@
       }
 
       $(document).ready(()=> {
-        load('/get_started.mjs');
+        load('https://cdn.jsdelivr.net/npm/@quantlib/misc/get_started.mjs');
       });
     </script>
   </body>
