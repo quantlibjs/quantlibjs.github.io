@@ -15,15 +15,15 @@
     <meta name="twitter:creator" content="@quantlibjs">
     <meta name="twitter:title" content="quantlib.js">
     <meta name="twitter:description" content="quantitative finance in javascript, typescript/javascript re-implementation of quantlib">
-    <meta name="twitter:image" content="https://quantlib.js.org/th.jpg">
+    <meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/logo.jpg">
 
     <!-- Facebook -->
     <meta property="og:url" content="https://quantlib.js.org/">
     <meta property="og:title" content="quantlib.js">
     <meta property="og:description" content="quantitative finance in javascript, typescript/javascript re-implementation of quantlib">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://quantlib.js.org/th.jpg">
-    <meta property="og:image:secure_url" content="https://quantlib.js.org/th.jpg">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/logo.jpg">
+    <meta property="og:image:secure_url" content="https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/logo.jpg">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="474">
     <meta property="og:image:height" content="474">
@@ -71,7 +71,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" onclick="load('https://cdn.jsdelivr.net/npm/@quantlib/misc/get_started.mjs');">get started</a>
+            <a class="nav-link" onclick="load('https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/get_started.mjs');">get started</a>
           </li>
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -375,7 +375,7 @@
           $('#report').empty();
           $('#report').append('<iframe class="embed-responsive-item"></iframe>');
         }).then(()=>{
-          fetch('https://cdn.jsdelivr.net/npm/@quantlib/misc/report.html').then(response=>{
+          fetch('https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/report.html').then(response=>{
             return response.text();
           }).then(html=>{
             html = html.replace(/<!---->/,
@@ -390,7 +390,7 @@
       }
 
       $(document).ready(()=> {
-        load('https://cdn.jsdelivr.net/npm/@quantlib/misc/get_started.mjs');
+        load('https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/get_started.mjs');
       });
     </script>
   </body>

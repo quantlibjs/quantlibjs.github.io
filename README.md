@@ -18,7 +18,7 @@
 
 ### CDN
 
-* latest version: https://cdn.jsdelivr.net/npm/@quantlib/ql/ql.mjs
+* latest version: https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs
 * specific version: https://cdn.jsdelivr.net/npm/@quantlib/ql@x.y.z/ql.mjs
 
 ### npm
