@@ -18,8 +18,13 @@
 
 ### CDN
 
+#### jsdlivr
 * latest version: https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs
 * specific version: https://cdn.jsdelivr.net/npm/@quantlib/ql@x.y.z/ql.mjs
+
+#### unpkg
+* latest version: https://unpkg.com/@quantlib/ql@latest/ql.mjs
+* specific version: https://unpkg.com/@quantlib/ql@x.y.z/ql.mjs
 
 ### npm
 ```
@@ -46,6 +51,10 @@ this library is still at early stage, many test cases fails, it's for enthusiast
 </script>
 ```
 
+### notebook
+
+checkout https://observablehq.com/@quantlib
+
 ### node.js
 `quantlib.js` can also be run using `node.js`, after downloading the code to your local drive:
 
@@ -65,22 +74,19 @@ obj.dosomething();
 
 ## doc
 
-the generated doc from source code is not as good as official c++ QuantLib documentation, so we might not publish docs at all, please refer to offical c++ quantlib doc: https://www.quantlib.org/reference/
+the generated doc from source code is not as good as official c++ QuantLib documentation, so I may not publish docs at all, please refer to offical c++ quantlib doc: https://www.quantlib.org/reference/
 
-## test suite
+## test-suite & example
 
-repo: https://github.com/quantlibjs/test-suite
+code repo: 
+* https://github.com/quantlibjs/test-suite
+* https://github.com/quantlibjs/examples
 
-following the `c++` [quantlib](https://www.quantlib.org/) [test-suite](https://github.com/lballabio/QuantLib/tree/master/test-suite) code, converted to js code
-
-## example
-
-repo: https://github.com/quantlibjs/examples
-
-following the `c++` [quantlib](https://www.quantlib.org/) [Examples](https://github.com/lballabio/QuantLib/tree/master/Examples) code, converted to js code
+following the `c++` [quantlib](https://www.quantlib.org/) [test-suite](https://github.com/lballabio/QuantLib/tree/master/test-suite) & [Examples](https://github.com/lballabio/QuantLib/tree/master/Examples) code, converted to js code
 
 ## Support
 * Follow us on Twitter: @quantlibjs
-* Follow us on Facebook: https://www.facebook.com/quantlibjs/
+* Facebook page: https://www.facebook.com/quantlibjs/
 * Google group: https://groups.google.com/d/forum/quantlibjs/
 * Group email: quantlibjs@googlegroup.com
+* reddit: https://reddit/com/r/quantlibjs
