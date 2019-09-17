@@ -70,7 +70,7 @@ obj.dosomething();
 ```
 
 ### typescript
-`ql.d.ts` file will be published later
+`ql.d.ts` can be found in the same location as ql.mjs
 
 ## doc
 
