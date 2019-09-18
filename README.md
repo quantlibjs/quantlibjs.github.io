@@ -3,16 +3,9 @@
 
 ## get started
 
-#### open https://quantlib.js.org with morden web browsers, chrome, firefox, etc...
+1. open https://quantlib.js.org with morden web browser, like chrome, firefox, etc...
 
-#### select a test `spec` or `example` from top menu
-![snap1](/64322073-6c73a980-cff4-11e9-9433-3928631538f4.png)
-
-`spec` source will be displayed on left panel, `spec` will be run by [jasmine](https://github.com/jasmine/jasmine) and test result will be displayed on right panel
-![snap2](/64322085-73022100-cff4-11e9-8a84-305e65405621.png)
-
->this is a working in progress project, the lib itself, test cases and examples are not complete
-
+2. select a test `spec` or `example` from top menu. `spec` source will be displayed on left panel, `spec` will be run by [jasmine](https://github.com/jasmine/jasmine) and test result will be displayed on right panel
 
 ## install
 
@@ -20,11 +13,11 @@
 
 #### jsdlivr
 * latest version: https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs
-* specific version: https://cdn.jsdelivr.net/npm/@quantlib/ql@x.y.z/ql.mjs
+* specific version `x.y.z` : https://cdn.jsdelivr.net/npm/@quantlib/ql@x.y.z/ql.mjs
 
 #### unpkg
 * latest version: https://unpkg.com/@quantlib/ql@latest/ql.mjs
-* specific version: https://unpkg.com/@quantlib/ql@x.y.z/ql.mjs
+* specific version `x.y.z` : https://unpkg.com/@quantlib/ql@x.y.z/ql.mjs
 
 ### npm
 ```
@@ -37,9 +30,7 @@ this library is still at early stage, many test cases fails, it's for enthusiast
 
 ### assumption
 
-* this project assumes `user` is already familiar with the `c++` [QuantLib](https://github.com/lballabio/QuantLib)
-
-* as `typescript`/`javascript` and `c++` are completely different languages, it's very difficult to explain all the details. for now, please refer to [test-suite](https://github.com/quantlibjs/test-suite), and [examples](https://github.com/quantlibjs/examples) code
+this project assumes `user` is already familiar with the `c++` [QuantLib](https://github.com/lballabio/QuantLib)
 
 ### web browser
 
@@ -74,7 +65,7 @@ obj.dosomething();
 
 ## doc
 
-the generated doc from source code is not as good as official c++ QuantLib documentation, so I may not publish docs at all, please refer to offical c++ quantlib doc: https://www.quantlib.org/reference/
+please refer offical c++ quantlib doc: https://www.quantlib.org/reference/
 
 ## test-suite & example
 
