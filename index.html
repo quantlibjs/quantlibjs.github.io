@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="quantitative finance in javascript, typescript/javascript re-implementation of quantlib">
-    <meta name="author" content="Jin Yang for typescript/javascript quantlib, and c++ QuantLib contributors">
-    <title>quantlib.js - working in progress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="quantitative finance in javascript">
+    <meta name="author" content="Jin Yang">
+    <title>quantlib.js - quantitative finance in javascript</title>
     <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/npm/jasmine-core@3.1.0/images/jasmine_favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/default.min.css">
@@ -14,13 +15,13 @@
     <meta name="twitter:site" content="@quantlibjs">
     <meta name="twitter:creator" content="@quantlibjs">
     <meta name="twitter:title" content="quantlib.js">
-    <meta name="twitter:description" content="quantitative finance in javascript, typescript/javascript re-implementation of quantlib">
+    <meta name="twitter:description" content="quantitative finance in javascript">
     <meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/logo.jpg">
 
     <!-- Facebook -->
     <meta property="og:url" content="https://quantlib.js.org/">
     <meta property="og:title" content="quantlib.js">
-    <meta property="og:description" content="quantitative finance in javascript, typescript/javascript re-implementation of quantlib">
+    <meta property="og:description" content="quantitative finance in javascript">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/logo.jpg">
     <meta property="og:image:secure_url" content="https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/logo.jpg">
@@ -41,7 +42,7 @@
     <style>
       .navbar-nav li:hover > ul.dropdown-menu {
             display: block;
-        }
+      }
       .dropdown-submenu {
           position:relative;
       }
@@ -150,7 +151,7 @@
                   </ul>
               </li>
               <li class="dropdown-submenu">
-                <a class="dropdown-item" tabindex="-1" href="#">instrument <b class="caret-right"></b></a>
+                <a class="dropdown-item" tabindex="-1" href="#">instruments <b class="caret-right"></b></a>
                 <ul class="dropdown-menu">
                   <a class="dropdown-item" onclick="load('/test-suite/capfloor.mjs');">capfloor</a>
                   <a class="dropdown-item" onclick="load('/test-suite/forwardrateagreement.mjs');">forward rate agreement</a>
@@ -223,7 +224,7 @@
                 </ul>
               </li>
               <li class="dropdown-submenu">
-                  <a class="dropdown-item" tabindex="-1" href="#">model <b class="caret-right"></b></a>
+                  <a class="dropdown-item" tabindex="-1" href="#">models <b class="caret-right"></b></a>
                   <ul class="dropdown-menu">
                     <a class="dropdown-item" onclick="load('/test-suite/batesmodel.mjs');">bates model</a>
                     <a class="dropdown-item" onclick="load('/test-suite/gjrgarchmodel.mjs');">gjr garch model</a>
@@ -273,7 +274,7 @@
                 </ul>
               </li>
               <li class="dropdown-submenu">
-                  <a class="dropdown-item" tabindex="-1" href="#">method <b class="caret-right"></b></a>
+                  <a class="dropdown-item" tabindex="-1" href="#">methods <b class="caret-right"></b></a>
                   <ul class="dropdown-menu">
                       <li class="dropdown-submenu">
                           <a class="dropdown-item" tabindex="-1" href="#">monte carlo <b class="caret-right"></b></a>
@@ -326,7 +327,7 @@
           </li>
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                example
+                examples
               </a>
               <ul class="dropdown-menu" role="menu">
                 <a class="dropdown-item" onclick="load('/examples/basketlosses.mjs');">basket losses</a>
@@ -349,6 +350,9 @@
                 <a class="dropdown-item" onclick="load('/examples/repo.mjs');">repo</a>
                 <a class="dropdown-item" onclick="load('/examples/swapvaluation.mjs');">swap valuation</a>
               </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://github.com/quantlibjs/quantlibjs.github.io/issues">issue</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="https://observablehq.com/@quantlib">notebook</a>

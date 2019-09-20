@@ -13,11 +13,11 @@
 
 #### jsdlivr
 * latest version: https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs
-* specific version `x.y.z` : https://cdn.jsdelivr.net/npm/@quantlib/ql@x.y.z/ql.mjs
+* version `x.y.z` : https://cdn.jsdelivr.net/npm/@quantlib/ql@x.y.z/ql.mjs
 
 #### unpkg
 * latest version: https://unpkg.com/@quantlib/ql@latest/ql.mjs
-* specific version `x.y.z` : https://unpkg.com/@quantlib/ql@x.y.z/ql.mjs
+* version `x.y.z` : https://unpkg.com/@quantlib/ql@x.y.z/ql.mjs
 
 ### npm
 ```
@@ -36,7 +36,7 @@ this project assumes `user` is already familiar with the `c++` [QuantLib](https:
 
 ```html
 <script type="module">
-    import {someclass} from 'https://cdn.jsdelivr.net/npm/@quantlib/ql/ql.mjs'
+    import {someclass} from 'https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs'
     const obj=new someclass();
     obj.dosomething();
 </script>
@@ -55,7 +55,7 @@ node --experimental-modules test.mjs
 
 in `test.mjs`
 ```js
-import {someclass} from '@quantlib/ql/ql.mjs'
+import {someclass} from '@quantlib/ql'
 const obj=new someclass();
 obj.dosomething();
 ```
@@ -76,7 +76,7 @@ code repo:
 following the `c++` [quantlib](https://www.quantlib.org/) [test-suite](https://github.com/lballabio/QuantLib/tree/master/test-suite) & [Examples](https://github.com/lballabio/QuantLib/tree/master/Examples) code, converted to js code
 
 ## Support
-* Follow us on Twitter: @quantlibjs
+* Follow us on Twitter: [@quantlibjs](https://twitter.com/quantlibjs)
 * Facebook page: https://www.facebook.com/quantlibjs/
 * Google group: https://groups.google.com/d/forum/quantlibjs/
 * Group email: quantlibjs@googlegroup.com
