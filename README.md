@@ -11,7 +11,7 @@
 
 ### CDN
 
-#### jsdlivr
+#### jsdelivr
 * latest version: https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs
 * version `x.y.z` : https://cdn.jsdelivr.net/npm/@quantlib/ql@x.y.z/ql.mjs
 
@@ -69,11 +69,11 @@ please refer offical c++ quantlib doc: https://www.quantlib.org/reference/
 
 ## test-suite & example
 
-code repo: 
+repo: 
 * https://github.com/quantlibjs/test-suite
 * https://github.com/quantlibjs/examples
 
-following the `c++` [quantlib](https://www.quantlib.org/) [test-suite](https://github.com/lballabio/QuantLib/tree/master/test-suite) & [Examples](https://github.com/lballabio/QuantLib/tree/master/Examples) code, converted to js code
+converted to `javascript` from the `c++` [quantlib](https://www.quantlib.org/) [test-suite](https://github.com/lballabio/QuantLib/tree/master/test-suite) & [Examples](https://github.com/lballabio/QuantLib/tree/master/Examples)
 
 ## Support
 * Follow us on Twitter: [@quantlibjs](https://twitter.com/quantlibjs)
