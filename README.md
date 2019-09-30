@@ -63,9 +63,9 @@ obj.dosomething();
 ### typescript
 `ql.d.ts` can be found in the same location as ql.mjs
 
-## doc
-
-please refer offical c++ quantlib doc: https://www.quantlib.org/reference/
+## docs
+* https://quantlib.js.org/docs
+* offical c++ quantlib doc: https://www.quantlib.org/reference/
 
 ## test-suite & example
 
