@@ -67,6 +67,11 @@ obj.dosomething();
 * https://quantlib.js.org/docs
 * offical c++ quantlib doc: https://www.quantlib.org/reference/
 
+## test report
+
+https://quantlib.js.org/test-suite/
+>this is static report updated manually, with the latest test results
+
 ## test-suite & example
 
 repo: 

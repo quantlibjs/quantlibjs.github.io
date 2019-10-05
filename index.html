@@ -72,16 +72,28 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="/docs">docs</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               test suite
             </a>
             <ul class="dropdown-menu" role="menu">
               <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-1" href="#">pattern <b class="caret-right"></b></a>
+                  <ul class="dropdown-menu">
+                    <a class="dropdown-item" onclick="load('/test-suite/lazyobject.mjs');">lazy object</a>
+                    <a class="dropdown-item" onclick="load('/test-suite/observable.mjs');">observable</a>
+                  </ul>
+              </li>
+              <li class="dropdown-submenu">
                 <a class="dropdown-item" tabindex="-1" href="#">currency & fx <b class="caret-right"></b></a>
                 <ul class="dropdown-menu">
+                  <a class="dropdown-item" onclick="load('/test-suite/blackdeltacalculator.mjs');">black delta calculator</a>
                   <a class="dropdown-item" onclick="load('/test-suite/exchangerate.mjs');">exchange rate</a>
                   <a class="dropdown-item" onclick="load('/test-suite/money.mjs');">money</a>
+                  <a class="dropdown-item" onclick="load('/test-suite/rounding.mjs');">rounding</a>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -98,47 +110,6 @@
                   </ul>
               </li>
               <li class="dropdown-submenu">
-                <a class="dropdown-item" tabindex="-1" href="#">math <b class="caret-right"></b></a>
-                <ul class="dropdown-menu">
-                  <a class="dropdown-item" onclick="load('/test-suite/array.mjs');">array</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/autocovariances.mjs');">auto covariances</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/covariance.mjs');">covariance</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/creditriskplus.mjs');">credit risk plus</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/distributions.mjs');">distributions</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/fastfouriertransform.mjs');">fast fourier transform</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/functions.mjs');">functions</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/gaussianquadratures.mjs');">gaussian quadratures</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/integrals.mjs');">integrals</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/interpolations.mjs');">interpolations</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/linearleastsquaresregression.mjs');">linear least squares regression</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/lowdiscrepancysequences.mjs');">low discrepancy sequences</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/matrices.mjs');">matrices</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/mersennetwister.mjs');">mersenne twister</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/numericaldifferentiation.mjs');">numerical differentiation</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/ode.mjs');">ode</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/optimizers.mjs');">optimizers</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/riskstats.mjs');">risk stats</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/rngtraits.mjs');">rng traits</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/rounding.mjs');">rounding</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/sampledcurve.mjs');">sampled curve</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/solvers.mjs');">solvers</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/stats.mjs');">stats</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/tqreigendecomposition.mjs');">tqr eigen decomposition</a>
-                  <a class="dropdown-item" onclick="load('/test-suite/transformedgrid.mjs');">transformed grid</a>
-                </ul>
-              </li>
-              <li class="dropdown-submenu">
-                  <a class="dropdown-item" tabindex="-1" href="#">stochastic process <b class="caret-right"></b></a>
-                  <ul class="dropdown-menu">
-                    <a class="dropdown-item" onclick="load('/test-suite/blackdeltacalculator.mjs');">black delta calculator</a>
-                    <a class="dropdown-item" onclick="load('/test-suite/blackformula.mjs');">black formula</a>
-                    <a class="dropdown-item" onclick="load('/test-suite/garch.mjs');">garch</a>
-                    <a class="dropdown-item" onclick="load('/test-suite/gsr.mjs');">gsr</a>
-                    <a class="dropdown-item" onclick="load('/test-suite/hybridhestonhullwhiteprocess.mjs');">hybrid heston hullwhilte process</a>
-                    <a class="dropdown-item" onclick="load('/test-suite/riskneutraldensitycalculator.mjs');">risk neutral density calculator</a>
-                  </ul>
-              </li>
-              <li class="dropdown-submenu">
                   <a class="dropdown-item" tabindex="-1" href="#">cashflow <b class="caret-right"></b></a>
                   <ul class="dropdown-menu">
                     <a class="dropdown-item" onclick="load('/test-suite/cashflows.mjs');">cashflow</a>
@@ -149,11 +120,105 @@
                   </ul>
               </li>
               <li class="dropdown-submenu">
-                <a class="dropdown-item" tabindex="-1" href="#">instruments <b class="caret-right"></b></a>
+                <a class="dropdown-item" tabindex="-1" href="#">math <b class="caret-right"></b></a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-submenu">
+                      <a class="dropdown-item" tabindex="-1" href="#">calculus <b class="caret-right"></b></a>
+                      <ul class="dropdown-menu">
+                        <a class="dropdown-item" onclick="load('/test-suite/gaussianquadratures.mjs');">gaussian quadratures</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/integrals.mjs');">integrals</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/numericaldifferentiation.mjs');">numerical differentiation</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/ode.mjs');">ode</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/solvers.mjs');">solvers</a>
+                      </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                      <a class="dropdown-item" tabindex="-1" href="#">linear algebra <b class="caret-right"></b></a>
+                      <ul class="dropdown-menu">
+                        <a class="dropdown-item" onclick="load('/test-suite/array.mjs');">array</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/covariance.mjs');">covariance</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/matrices.mjs');">matrices</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/tqreigendecomposition.mjs');">tqr eigen decomposition</a>
+                      </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                      <a class="dropdown-item" tabindex="-1" href="#">statistics <b class="caret-right"></b></a>
+                      <ul class="dropdown-menu">
+                        <a class="dropdown-item" onclick="load('/test-suite/linearleastsquaresregression.mjs');">linear least squares regression</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/riskstats.mjs');">risk stats</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/stats.mjs');">stats</a>
+                      </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                      <a class="dropdown-item" tabindex="-1" href="#">probability <b class="caret-right"></b></a>
+                      <ul class="dropdown-menu">
+                        <a class="dropdown-item" onclick="load('/test-suite/autocovariances.mjs');">auto covariances</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/distributions.mjs');">distributions</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/optimizers.mjs');">optimizers</a>
+                      </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                      <a class="dropdown-item" tabindex="-1" href="#">random numbers <b class="caret-right"></b></a>
+                      <ul class="dropdown-menu">
+                        <a class="dropdown-item" onclick="load('/test-suite/lowdiscrepancysequences.mjs');">low discrepancy sequences</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/rngtraits.mjs');">rng traits</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/mersennetwister.mjs');">mersenne twister</a>
+                      </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                      <a class="dropdown-item" tabindex="-1" href="#">numerical method <b class="caret-right"></b></a>
+                      <ul class="dropdown-menu">
+                        <a class="dropdown-item" onclick="load('/test-suite/fastfouriertransform.mjs');">fast fourier transform</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/functions.mjs');">functions</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/interpolations.mjs');">interpolations</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/sampledcurve.mjs');">sampled curve</a>
+                        <a class="dropdown-item" onclick="load('/test-suite/transformedgrid.mjs');">transformed grid</a>
+                      </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-1" href="#">stochastic process <b class="caret-right"></b></a>
+                  <ul class="dropdown-menu">
+                    <a class="dropdown-item" onclick="load('/test-suite/gsr.mjs');">gsr</a>
+                    <a class="dropdown-item" onclick="load('/test-suite/hybridhestonhullwhiteprocess.mjs');">hybrid heston hullwhilte process</a>
+                  </ul>
+              </li>
+              <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-1" href="#">method <b class="caret-right"></b></a>
+                  <ul class="dropdown-menu">
+                      <li class="dropdown-submenu">
+                          <a class="dropdown-item" tabindex="-1" href="#">monte carlo <b class="caret-right"></b></a>
+                          <ul class="dropdown-menu">
+                            <a class="dropdown-item" onclick="load('/test-suite/brownianbridge.mjs');">brownian bridge</a>
+                            <a class="dropdown-item" onclick="load('/test-suite/pathgenerator.mjs');">path generator</a>
+                            <a class="dropdown-item" onclick="load('/test-suite/mclongstaffschwartzengine.mjs');">longstaff schwart engine</a>
+                          </ul>
+                      </li>
+                      <li class="dropdown-submenu">
+                          <a class="dropdown-item" tabindex="-1" href="#">finite difference <b class="caret-right"></b></a>
+                          <ul class="dropdown-menu">
+                            <a class="dropdown-item" onclick="load('/test-suite/curvestates.mjs');">curve states</a>
+                            <a class="dropdown-item" onclick="load('/test-suite/fdheston.mjs');">fd heston</a>
+                            <a class="dropdown-item" onclick="load('/test-suite/fdmlinearop.mjs');">fdm linear op</a>
+                            <a class="dropdown-item" onclick="load('/test-suite/operators.mjs');">operators</a>
+                          </ul>
+                      </li>
+                      <li class="dropdown-submenu">
+                          <a class="dropdown-item" tabindex="-1" href="#">lattice <b class="caret-right"></b></a>
+                          <ul class="dropdown-menu">
+                            <a class="dropdown-item" onclick="load('/test-suite/extendedtrees.mjs');">extended trees</a>
+                          </ul>
+                      </li>
+                  </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item" tabindex="-1" href="#">instrument pricing <b class="caret-right"></b></a>
                 <ul class="dropdown-menu">
                   <a class="dropdown-item" onclick="load('/test-suite/capfloor.mjs');">capfloor</a>
                   <a class="dropdown-item" onclick="load('/test-suite/forwardrateagreement.mjs');">forward rate agreement</a>
                   <a class="dropdown-item" onclick="load('/test-suite/instruments.mjs');">instruments</a>
+                  <a class="dropdown-item" onclick="load('/test-suite/blackformula.mjs');">black formula</a>
                   <a class="dropdown-item" onclick="load('/test-suite/quotes.mjs');">quotes</a>
                   <li class="dropdown-submenu">
                     <a class="dropdown-item" tabindex="-1" href="#">option <b class="caret-right"></b></a>
@@ -222,9 +287,10 @@
                 </ul>
               </li>
               <li class="dropdown-submenu">
-                  <a class="dropdown-item" tabindex="-1" href="#">models <b class="caret-right"></b></a>
+                  <a class="dropdown-item" tabindex="-1" href="#">model <b class="caret-right"></b></a>
                   <ul class="dropdown-menu">
                     <a class="dropdown-item" onclick="load('/test-suite/batesmodel.mjs');">bates model</a>
+                    <a class="dropdown-item" onclick="load('/test-suite/garch.mjs');">garch</a>
                     <a class="dropdown-item" onclick="load('/test-suite/gjrgarchmodel.mjs');">gjr garch model</a>
                     <a class="dropdown-item" onclick="load('/test-suite/hestonmodel.mjs');">heston model</a>
                     <a class="dropdown-item" onclick="load('/test-suite/hestonslvmodel.mjs');">heston slv model</a>
@@ -272,56 +338,36 @@
                 </ul>
               </li>
               <li class="dropdown-submenu">
-                  <a class="dropdown-item" tabindex="-1" href="#">methods <b class="caret-right"></b></a>
+                  <a class="dropdown-item" tabindex="-1" href="#">experimental <b class="caret-right"></b></a>
                   <ul class="dropdown-menu">
-                      <li class="dropdown-submenu">
-                          <a class="dropdown-item" tabindex="-1" href="#">monte carlo <b class="caret-right"></b></a>
-                          <ul class="dropdown-menu">
-                            <a class="dropdown-item" onclick="load('/test-suite/brownianbridge.mjs');">brownian bridge</a>
-                            <a class="dropdown-item" onclick="load('/test-suite/pathgenerator.mjs');">path generator</a>
-                            <a class="dropdown-item" onclick="load('/test-suite/mclongstaffschwartzengine.mjs');">longstaff schwart engine</a>
-                          </ul>
-                      </li>
-                      <li class="dropdown-submenu">
-                          <a class="dropdown-item" tabindex="-1" href="#">finite difference <b class="caret-right"></b></a>
-                          <ul class="dropdown-menu">
-                            <a class="dropdown-item" onclick="load('/test-suite/curvestates.mjs');">curve states</a>
-                            <a class="dropdown-item" onclick="load('/test-suite/fdheston.mjs');">fd heston</a>
-                            <a class="dropdown-item" onclick="load('/test-suite/fdmlinearop.mjs');">fdm linear op</a>
-                            <a class="dropdown-item" onclick="load('/test-suite/operators.mjs');">operators</a>
-                          </ul>
-                      </li>
-                      <li class="dropdown-submenu">
-                          <a class="dropdown-item" tabindex="-1" href="#">lattice <b class="caret-right"></b></a>
-                          <ul class="dropdown-menu">
-                            <a class="dropdown-item" onclick="load('/test-suite/extendedtrees.mjs');">extended trees</a>
-                          </ul>
-                      </li>
-                  </ul>
-              </li>
-              <li class="dropdown-submenu">
-                  <a class="dropdown-item" tabindex="-1" href="#">credit <b class="caret-right"></b></a>
-                  <ul class="dropdown-menu">
-                    <a class="dropdown-item" onclick="load('/test-suite/cdo.mjs');">cdo</a>
-                    <a class="dropdown-item" onclick="load('/test-suite/cdsoption.mjs');">cds option</a>
-                    <a class="dropdown-item" onclick="load('/test-suite/creditdefaultswap.mjs');">credit default swap</a>
-                    <a class="dropdown-item" onclick="load('/test-suite/nthtodefault.mjs');">nth to default</a>
-                  </ul>
-              </li>
-              <li class="dropdown-submenu">
-                <a class="dropdown-item" tabindex="-1" href="#">commodity <b class="caret-right"></b></a>
-                <ul class="dropdown-menu">
-                  <a class="dropdown-item" onclick="load('/test-suite/commodityunitofmeasure.mjs');">unit of measure</a>
-                </ul>
-              </li>
-              <li class="dropdown-submenu">
-                  <a class="dropdown-item" tabindex="-1" href="#">patterns <b class="caret-right"></b></a>
-                  <ul class="dropdown-menu">
-                    <a class="dropdown-item" onclick="load('/test-suite/lazyobject.mjs');">lazy object</a>
-                    <a class="dropdown-item" onclick="load('/test-suite/observable.mjs');">observable</a>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item" tabindex="-1" href="#">credit <b class="caret-right"></b></a>
+                        <ul class="dropdown-menu">
+                          <a class="dropdown-item" onclick="load('/test-suite/cdo.mjs');">cdo</a>
+                          <a class="dropdown-item" onclick="load('/test-suite/cdsoption.mjs');">cds option</a>
+                          <a class="dropdown-item" onclick="load('/test-suite/creditdefaultswap.mjs');">credit default swap</a>
+                          <a class="dropdown-item" onclick="load('/test-suite/nthtodefault.mjs');">nth to default</a>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item" tabindex="-1" href="#">commodity <b class="caret-right"></b></a>
+                        <ul class="dropdown-menu">
+                          <a class="dropdown-item" onclick="load('/test-suite/commodityunitofmeasure.mjs');">unit of measure</a>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item" tabindex="-1" href="#">risk <b class="caret-right"></b></a>
+                        <ul class="dropdown-menu">
+                          <a class="dropdown-item" onclick="load('/test-suite/creditriskplus.mjs');">credit risk plus</a>
+                          <a class="dropdown-item" onclick="load('/test-suite/riskneutraldensitycalculator.mjs');">risk neutral density calculator</a>
+                        </ul>
+                    </li>
                   </ul>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="/test-suite">test report</a>
           </li>
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -348,9 +394,6 @@
                 <a class="dropdown-item" onclick="load('/examples/repo.mjs');">repo</a>
                 <a class="dropdown-item" onclick="load('/examples/swapvaluation.mjs');">swap valuation</a>
               </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" target="_blank" href="/docs">docs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="https://observablehq.com/@quantlib">notebook</a>
