@@ -5,7 +5,11 @@
 
 1. open https://quantlib.js.org with morden web browser, like chrome, firefox, etc...
 
-2. select a test `spec` or `example` from top menu. `spec` source will be displayed on left panel, `spec` will be run by [jasmine](https://github.com/jasmine/jasmine) and test result will be displayed on right panel
+2. select a `spec` or `example` from navbar. `spec` source will be displayed on left panel, `spec` will be run with [jasmine](https://github.com/jasmine/jasmine) by your web browser, and test result will be displayed on right panel
+
+## docs
+* https://quantlib.js.org/docs
+* offical c++ quantlib doc: https://www.quantlib.org/reference/
 
 ## install
 
@@ -27,6 +31,8 @@ npm install @quantlib/ql
 ## usage
 
 this library is still at early stage, many test cases fails, it's for enthusiast only.
+
+A static [report](https://quantlib.js.org/test-suite/) is updated manually monthly, so you could see the overall test pass rate.
 
 ### assumption
 
@@ -62,15 +68,6 @@ obj.dosomething();
 
 ### typescript
 `ql.d.ts` can be found in the same location as ql.mjs
-
-## docs
-* https://quantlib.js.org/docs
-* offical c++ quantlib doc: https://www.quantlib.org/reference/
-
-## test report
-
-https://quantlib.js.org/test-suite/
->this is static report updated manually, with the latest test results
 
 ## test-suite & example
 
