@@ -40,6 +40,8 @@ this project assumes `user` is already familiar with the `c++` [QuantLib](https:
 
 ### web browser
 
+`ql.mjs` is [ESM format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), when using in html script tag, make sure to have script type set to "module"
+
 ```html
 <script type="module">
     import {someclass} from 'https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs'
@@ -53,7 +55,7 @@ this project assumes `user` is already familiar with the `c++` [QuantLib](https:
 checkout https://observablehq.com/@quantlib
 
 ### node.js
-`quantlib.js` can also be run using `node.js`, after downloading the code to your local drive:
+`quantlib.js` also works in `node.js` env, after installing with `npm`, pass `--experimental-modules` to `node` to use ESM javascript file
 
 ```sh
 node --experimental-modules test.mjs
@@ -69,9 +71,15 @@ obj.dosomething();
 ### typescript
 `ql.d.ts` can be found in the same location as ql.mjs
 
+```ts
+import {someclass} from '@quantlib/ql'
+const obj:someclass = new someclass();
+obj.dosomething();
+```
+
 ## test-suite & example
 
-repo: 
+repo:
 * https://github.com/quantlibjs/test-suite
 * https://github.com/quantlibjs/examples
 
