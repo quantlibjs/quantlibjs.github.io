@@ -4,7 +4,7 @@
    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>https://quantlib.js.org/</loc>
-        <lastmod>2019-10-08</lastmod>
+        <lastmod>2019-10-15</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
@@ -14,7 +14,7 @@
     </url>
     <url>
         <loc>https://quantlib.js.org/test-suite/</loc>
-        <lastmod>2019-10-02</lastmod>
+        <lastmod>2019-10-09</lastmod>
         <changefreq>weekly</changefreq>
     </url>
 </urlset>
