@@ -85,6 +85,13 @@ repo:
 
 converted to `javascript` from the `c++` [quantlib](https://www.quantlib.org/) [test-suite](https://github.com/lballabio/QuantLib/tree/master/test-suite) & [Examples](https://github.com/lballabio/QuantLib/tree/master/Examples)
 
+## credit
+
+* C++ QuantLib project: https://quantlib.org
+* C++ QuantLib-noboost: https://github.com/haozhangphd/QuantLib-noBoost
+* mathjs: https://mathjs.org
+* js.org: https://github.com/js-org/js.org
+
 ## Support
 * Follow us on Twitter: [@quantlibjs](https://twitter.com/quantlibjs)
 * Facebook page: https://www.facebook.com/quantlibjs/
