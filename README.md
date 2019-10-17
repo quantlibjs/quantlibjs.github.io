@@ -98,3 +98,6 @@ converted to `javascript` from the `c++` [quantlib](https://www.quantlib.org/) [
 * Google group: https://groups.google.com/d/forum/quantlibjs/
 * Group email: quantlibjs@googlegroup.com
 * reddit: https://reddit/com/r/quantlibjs
+
+## blog
+* https://quantlib.js.org/blog/

@@ -8,6 +8,11 @@
         <changefreq>weekly</changefreq>
     </url>
     <url>
+        <loc>https://quantlib.js.org/blog/</loc>
+        <lastmod>2019-10-17</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
         <loc>https://quantlib.js.org/docs/</loc>
         <lastmod>2019-10-02</lastmod>
         <changefreq>weekly</changefreq>
