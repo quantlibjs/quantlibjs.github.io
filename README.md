@@ -50,10 +50,6 @@ this project assumes `user` is already familiar with the `c++` [QuantLib](https:
 </script>
 ```
 
-### notebook
-
-checkout https://observablehq.com/@quantlib
-
 ### node.js
 `quantlib.js` also works in `node.js` env, after installing with `npm`, pass `--experimental-modules` to `node` to use ESM javascript file
 
@@ -86,18 +82,15 @@ repo:
 converted to `javascript` from the `c++` [quantlib](https://www.quantlib.org/) [test-suite](https://github.com/lballabio/QuantLib/tree/master/test-suite) & [Examples](https://github.com/lballabio/QuantLib/tree/master/Examples)
 
 ## credit
-
 * C++ QuantLib project: https://quantlib.org
 * C++ QuantLib-noboost: https://github.com/haozhangphd/QuantLib-noBoost
 * mathjs: https://mathjs.org
+* phosphor: https://github.com/phosphorjs/phosphor
 * js.org: https://github.com/js-org/js.org
 
-## Support
+## link
+* Google group: https://groups.google.com/d/forum/quantlibjs/
 * Follow us on Twitter: [@quantlibjs](https://twitter.com/quantlibjs)
 * Facebook page: https://www.facebook.com/quantlibjs/
-* Google group: https://groups.google.com/d/forum/quantlibjs/
-* Group email: quantlibjs@googlegroup.com
-* reddit: https://reddit/com/r/quantlibjs
-
-## blog
-* https://quantlib.js.org/blog/
+* blog: https://quantlib.js.org/blog/
+* notebook: https://observablehq.com/@quantlib
