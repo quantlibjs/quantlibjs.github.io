@@ -1,5 +1,5 @@
 
-# quantlib.js [![npm version](https://img.shields.io/npm/v/@quantlib/ql.svg?style=flat)](https://www.npmjs.com/package/@quantlib/ql) [![](https://data.jsdelivr.com/v1/package/npm/@quantlib/ql/badge?style=rounded)](https://www.jsdelivr.com/package/npm/@quantlib/ql) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Twitter Follow](https://img.shields.io/twitter/follow/quantlibjs.svg?style=social&maxAge=3600)](https://twitter.com/quantlibjs)
+# quantlib.js [![npm version](https://img.shields.io/npm/v/@quantlib/ql.svg?style=flat)](https://www.npmjs.com/package/@quantlib/ql) [![](https://data.jsdelivr.com/v1/package/npm/@quantlib/ql/badge?style=rounded)](https://www.jsdelivr.com/package/npm/@quantlib/ql) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  [![copyright](https://img.shields.io/badge/%C2%A9%202019-Jin%20Yang-brightgreen)](https://quantlib.js.org/blog/) [![Twitter Follow](https://img.shields.io/twitter/follow/quantlibjs.svg?style=social&maxAge=3600)](https://twitter.com/quantlibjs)
 
 ## quantitative finance in javascript
 1. [get started](#get-started)
