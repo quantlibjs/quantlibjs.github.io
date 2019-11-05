@@ -1,30 +1,26 @@
-
 # quantlib.js [![npm version](https://img.shields.io/npm/v/@quantlib/ql.svg?style=flat)](https://www.npmjs.com/package/@quantlib/ql) [![](https://data.jsdelivr.com/v1/package/npm/@quantlib/ql/badge?style=rounded)](https://www.jsdelivr.com/package/npm/@quantlib/ql) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  [![copyright](https://img.shields.io/badge/%C2%A9%202019-Jin%20Yang-brightgreen)](https://quantlib.js.org/blog/) [![Twitter Follow](https://img.shields.io/twitter/follow/quantlibjs.svg?style=social&maxAge=3600)](https://twitter.com/quantlibjs)
 
 ## quantitative finance in javascript
-1. [get started](#get-started)
-2. [release note](#release-note)
-3. [api document](#docs)
-4. [how to use](#usage)
-5. [test suite & example](#test-suite--example)
-6. [license](#license)
-7. [credit](#credit)
-8. [other links](#link)
-9. [test report](#test-report)
+1. [introduction](#introduction)
+2. [get started](#get-started)
+3. [how to use](#usage)
+4. [release note](#release-note)
+5. [api document](#docs)
+6. [test suite & example](#test-suite--example)
+7. [license](#license)
+8. [credit](#credit)
+9. [resource](#resource)
+10. [test report](#test-report)
+11. [example output](#example)
+
+## introduction
+`quantlib.js` aims to be a **COMPLETE** re-implementation of `C++` [QuantLib](https://quantlib.org) in `javascript` language, [emscripten](https://emscripten.org/) is **NOT** used. it can be used in web browser or node.js environment.
 
 ## get started
 
 1. open https://quantlib.js.org with morden web browser, like chrome, firefox, etc...
 
 2. select a `spec` or `example` from menu. `spec` source will be displayed on left panel, `spec` will be run with [jasmine](https://github.com/jasmine/jasmine) by your web browser, and test result will be displayed on right panel
-
-## release note
-* 0.2.4 fix `risk statistics`, some `piecewise yield curve`
-* 0.2.3 fix `Term structure tests`, `Gaussian quadratures experimental tests`
-
-## docs
-* https://quantlib.js.org/docs
-* official c++ quantlib doc: https://www.quantlib.org/reference/
 
 ## usage
 
@@ -73,6 +69,14 @@ const obj:someclass = new someclass();
 obj.dosomething();
 ```
 
+## release note
+* 0.2.4 fix `risk statistics`, some `piecewise yield curve`
+* 0.2.3 fix `Term structure tests`, `Gaussian quadratures experimental tests`
+
+## docs
+* https://quantlib.js.org/docs
+* official c++ quantlib doc: https://www.quantlib.org/reference/
+
 ## test-suite & example
 
 A static [report](https://quantlib.js.org/test-suite/) is updated regularly, so you could see the overall test status.
@@ -86,7 +90,7 @@ converted from the `c++` [quantlib](https://www.quantlib.org/) [test-suite](http
 these are the code loaded and executed in https://quantlib.js.org
 
 ## license
-
+```
 
                                  Apache License
                            Version 2.0, January 2004
@@ -289,6 +293,7 @@ these are the code loaded and executed in https://quantlib.js.org
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+```
 
 ## credit
 
@@ -298,7 +303,7 @@ these are the code loaded and executed in https://quantlib.js.org
 * phosphor: https://github.com/phosphorjs/phosphor
 * js.org: https://github.com/js-org/js.org
 
-## link
+## resource
 * Google group: https://groups.google.com/d/forum/quantlibjs/
 * Follow us on Twitter: [@quantlibjs](https://twitter.com/quantlibjs)
 * Facebook page: https://www.facebook.com/quantlibjs/
@@ -643,6 +648,30 @@ Term structure tests
 Amortizing Bond tests
 - [x] Testing amortizing fixed rate bond...
 
+Bond tests
+- [x] Testing consistency of bond price/yield calculation...
+- [x] Testing consistency of bond price/ATM rate calculation...
+- [x] Testing consistency of bond price/z-spread calculation...
+- [x] Testing theoretical bond price/yield calculation...
+- [x] Testing bond price/yield calculation against cached values...
+- [x] Testing zero-coupon bond prices against cached values...
+- [x] Testing fixed-coupon bond prices against cached values...
+- [x] Testing floating-rate bond prices against cached values...
+- [x] Testing Brazilian public bond prices against Andima cached values...
+- [x] Testing ex-coupon UK Gilt price against market values...
+- [x] Testing ex-coupon Australian bond price against market values...
+- [x] Testing South African R2048 bond price using Schedule constructor with Date vector...
+- [x] Testing Thirty/360 bond with settlement on 31st of the month...
+
+Cap and floor tests
+- [x] Testing cap/floor vega...
+- [x] Testing cap/floor dependency on strike...
+- [x] Testing consistency between cap, floor and collar...
+- [x] Testing cap/floor parity...
+- [x] Testing cap/floor ATM rate...
+- [x] Testing implied term volatility for cap and floor...
+- [x] Testing Black cap/floor price against cached values...
+
 forward rate agreement
 - [x] Testing forward rate agreement construction...
 
@@ -712,4 +741,3 @@ Extensible option tests
 
 Credit risk plus tests
 - [x] Testing extended credit risk plus model against reference values...
-
