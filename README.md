@@ -11,7 +11,6 @@
 8. [credit](#credit)
 9. [resource](#resource)
 10. [test report](#test-report)
-11. [example output](#example)
 
 ## introduction
 `quantlib.js` aims to be a **COMPLETE** re-implementation of `C++` [QuantLib](https://quantlib.org) in `javascript` language, [emscripten](https://emscripten.org/) is **NOT** used. it can be used in web browser or node.js environment.
@@ -684,7 +683,7 @@ Quote tests
 
 Brownian bridge tests
 - [x] Testing Brownian-bridge variates...
-- [ ] Testing Brownian-bridge path generation...
+- [x] Testing Brownian-bridge path generation...
 
 Path generation tests
 - [x] Testing 1-D path generation against cached values...
