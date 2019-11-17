@@ -314,7 +314,7 @@ these are the code loaded and executed in https://quantlib.js.org
 * notebook: https://observablehq.com/@quantlib
 
 ## test report
-v0.2.6 total: 850, passed: 498, failed: 183, pending: 169
+v0.2.6 total: 704, passed: 352, failed: 183, pending: 169
 
 LazyObject tests
 - [x] Testing that lazy objects discard notifications after the first...
