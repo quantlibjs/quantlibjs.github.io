@@ -7,7 +7,7 @@
     <meta name="author" content="Jin Yang">
     <meta name="keywords" content="quantlib, quantlib.js, ql.mjs, math, mjs, js, javascript, quant, quantitative, finance, quantitative finance, mathematical finance, calculus, linear algebra, statistcs, probability, fast fourier transform, interpolation, extrapolation, ode, cashflow, libor, eurlibor, usdlibor, instrument, capfloor, bond, option, swap, swaption, future, monte carlo, finite difference, lattice, equity, market model, short rate, volatility, stochastic process, term structure">
     <meta name="google-site-verification" content="4IrXoRzLpuCL684J3Y19wWtY9W5KqlvwLH5EQuZh1-Q" />
-    <meta name="baidu-site-verification" content="5VJ5ngbcQy" />
+    <!-- <meta name="baidu-site-verification" content="5VJ5ngbcQy" /> -->
     <title>quantlib.js - quantitative finance in javascript © 2019 Jin Yang</title>
     <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/npm/jasmine-core@3.4.0/images/jasmine_favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -39,8 +39,7 @@
 
       gtag('config', 'UA-87290595-1', {'optimize_id': 'GTM-5ZNS7TC'});
     </script>
-    
-    <!-- Baidu TongJi -->
+    <!--  
     <script>
       var _hmt = _hmt || [];
       (function() {
@@ -50,7 +49,7 @@
         s.parentNode.insertBefore(hm, s);
       })();
     </script>
-      
+    -->
     <style>
       .navbar-nav li:hover > ul.dropdown-menu {
             display: block;
@@ -207,6 +206,7 @@
                             <a class="dropdown-item" onclick="load('/test-suite/curvestates.mjs');">curve states</a>
                             <a class="dropdown-item" onclick="load('/test-suite/fdheston.mjs');">fd heston</a>
                             <a class="dropdown-item" onclick="load('/test-suite/fdmlinearop.mjs');">fdm linear op</a>
+                            <!-- <a class="dropdown-item" onclick="load('/test-suite/nthorderderivativeop.mjs');">nth-order derivative op</a> -->
                             <a class="dropdown-item" onclick="load('/test-suite/operators.mjs');">operators</a>
                           </ul>
                       </li>
@@ -351,7 +351,6 @@
                           <a class="dropdown-item" onclick="load('/test-suite/cdsoption.mjs');">cds option</a>
                           <a class="dropdown-item" onclick="load('/test-suite/creditdefaultswap.mjs');">credit default swap</a>
                           <a class="dropdown-item" onclick="load('/test-suite/nthtodefault.mjs');">nth to default</a>
-                          <a class="dropdown-item" onclick="load('/test-suite/nthorderderivativeop.mjs');">nth ordre derivative op</a>
                         </ul>
                     </li>
                     <li class="dropdown-submenu">
