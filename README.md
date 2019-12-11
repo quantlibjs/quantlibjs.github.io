@@ -71,12 +71,15 @@ obj.dosomething();
 ```
 
 ## release note
+* 0.3.1, examples cleanup, fixed 4 examples, global optimizers DE tests
 * 0.3.0, fixed 40+ specs, start working on model tests
 * 0.2.7, fixed `default probability curves` specs
 * 0.2.6, fixed most `european option` test, tree engine cleanup
 * 0.2.5, fixed `piecewise zero spreaded` term structure, `brownian bridge`, 4 `american options` specs, FD engine cleanup
-* 0.2.4 fixed `risk statistics`, some `piecewise yield curve`
-* 0.2.3 fixed `Term structure tests`, `Gaussian quadratures experimental tests`
+* 0.2.4, fixed `risk statistics`, some `piecewise yield curve` specs
+* 0.2.3, fixed `Term structure tests`, `Gaussian quadratures experimental tests`
+* 0.1.x, most math specs passed
+* 0.0.x, patterns, date&time specs passed
 
 ## docs
 * https://quantlib.js.org/docs
@@ -316,7 +319,9 @@ these are the code loaded and executed in https://quantlib.js.org
 * notebook: https://observablehq.com/@quantlib
 
 ## test report
-v0.3.0 total: 703, passed: 418, failed: 169, pending: 116
+
+- test suite: total: 703, passed: 418, failed: 169, pending: 116
+- examples: total 19, passed: 9, failed: 10
 
 LazyObject tests
 - [x] Testing that lazy objects discard notifications after the first...
@@ -1317,3 +1322,24 @@ Libor market model process tests
 - [ ] Testing caplet LMM process initialisation...
 - [ ] Testing caplet LMM lambda bootstrapping...
 - [ ] Testing caplet LMM Monte-Carlo caplet pricing...
+
+Examples:
+- [ ] Basket Losses
+- [ ] Bermudan Swaption
+- [X] Bonds
+- [ ] Callable bonds
+- [X] CDS
+- [ ] Convertable bonds
+- [ ] CVAIRS
+- [X] Discrete hedging
+- [ ] Equity Option
+- [X] Fitted bond curve
+- [X] FRA
+- [ ] Gaussian 1D models
+- [ ] Global Optimizer
+- [ ] Latent Model
+- [ ] Market models
+- [X] Multi-dim Integral
+- [X] Replication
+- [X] Repo
+- [X] Swap valuation
