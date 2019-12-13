@@ -32,7 +32,7 @@
 #### install from npm
 
 ```
-npm install @quantlib/ql
+npm i @quantlib/ql
 ```
 
 #### use in web page
@@ -41,9 +41,31 @@ npm install @quantlib/ql
 
 ```html
 <script type="module">
-    import {someclass} from 'https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs'
-    const obj=new someclass();
-    obj.dosomething();
+
+import { Actual360, AnalyticEuropeanEngine, BlackConstantVol, BlackScholesProcess, DateExt, EuropeanExercise, EuropeanOption, FlatForward, Handle, Option, PlainVanillaPayoff, Settings, SimpleQuote, TARGET } from 'https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs';
+
+const today = DateExt.UTC('7,March,2014');
+Settings.evaluationDate.set(today);
+
+const payoff = new PlainVanillaPayoff(Option.Type.Call, 100.0);
+const exercise = new EuropeanExercise(DateExt.UTC('7,June,2014'));
+const option = new EuropeanOption(payoff, exercise);
+
+const u = new SimpleQuote(100.0);
+const r = new SimpleQuote(0.01);
+const s = new SimpleQuote(0.2);
+
+const riskFreeCurve = new FlatForward().ffInit3(0, new TARGET(), new Handle(r), new Actual360());
+const volatility = new BlackConstantVol().bcvInit4(0, new TARGET(), new Handle(s), new Actual360());
+
+const process = new BlackScholesProcess(new Handle(u), new Handle(riskFreeCurve), new Handle(volatility));
+
+const engine = new AnalyticEuropeanEngine().init1(process);
+option.setPricingEngine(engine);
+
+const npv = option.NPV();
+console.log(`NPV = ${npv}`);  // 4.155543462156206
+
 </script>
 ```
 
@@ -56,18 +78,66 @@ node --experimental-modules test.mjs
 
 in `test.mjs`
 ```js
-import {someclass} from '@quantlib/ql'
-const obj=new someclass();
-obj.dosomething();
+import { Actual360, AnalyticEuropeanEngine, BlackConstantVol, BlackScholesProcess, DateExt, EuropeanExercise, EuropeanOption, FlatForward, Handle, Option, PlainVanillaPayoff, Settings, SimpleQuote, TARGET } from '@quantlib/ql';
+
+const today = DateExt.UTC('7,March,2014');
+Settings.evaluationDate.set(today);
+
+const payoff = new PlainVanillaPayoff(Option.Type.Call, 100.0);
+const exercise = new EuropeanExercise(DateExt.UTC('7,June,2014'));
+const option = new EuropeanOption(payoff, exercise);
+
+const u = new SimpleQuote(100.0);
+const r = new SimpleQuote(0.01);
+const s = new SimpleQuote(0.2);
+
+const riskFreeCurve = new FlatForward().ffInit3(0, new TARGET(), new Handle(r), new Actual360());
+const volatility = new BlackConstantVol().bcvInit4(0, new TARGET(), new Handle(s), new Actual360());
+
+const process = new BlackScholesProcess(new Handle(u), new Handle(riskFreeCurve), new Handle(volatility));
+
+const engine = new AnalyticEuropeanEngine().init1(process);
+option.setPricingEngine(engine);
+
+const npv = option.NPV();
+console.log(`NPV = ${npv}`);  // 4.155543462156206
 ```
 
 #### typescript
 `ql.d.ts` is published along with `ql.mjs`
 
+write code in typescript, then compile with `tsc` or run with `ts-node`
+
+in `test.ts`
+
 ```ts
-import {someclass} from '@quantlib/ql'
-const obj:someclass = new someclass();
-obj.dosomething();
+import {Actual360, AnalyticEuropeanEngine, BlackConstantVol, BlackScholesProcess, BlackVolTermStructure, DateExt, EuropeanExercise, EuropeanOption, Exercise, FlatForward, GeneralizedBlackScholesProcess, Handle, Option, PlainVanillaPayoff, PricingEngine, Quote, Real, Settings, SimpleQuote, StrikedTypePayoff, TARGET, YieldTermStructure} from '@quantlib/ql';
+
+const today: Date = DateExt.UTC('7,March,2014');
+Settings.evaluationDate.set(today);
+
+const payoff: StrikedTypePayoff =
+    new PlainVanillaPayoff(Option.Type.Call, 100.0);
+const exercise: Exercise = new EuropeanExercise(DateExt.UTC('7,June,2014'));
+const option: EuropeanOption = new EuropeanOption(payoff, exercise);
+
+const u: Quote = new SimpleQuote(100.0);
+const r: Quote = new SimpleQuote(0.01);
+const s: Quote = new SimpleQuote(0.2);
+
+const riskFreeCurve: YieldTermStructure =
+    new FlatForward().ffInit3(0, new TARGET(), new Handle(r), new Actual360());
+const volatility: BlackVolTermStructure = new BlackConstantVol().bcvInit4(
+    0, new TARGET(), new Handle(s), new Actual360());
+
+const process: GeneralizedBlackScholesProcess = new BlackScholesProcess(
+    new Handle(u), new Handle(riskFreeCurve), new Handle(volatility));
+
+const engine: PricingEngine = new AnalyticEuropeanEngine().init1(process);
+option.setPricingEngine(engine);
+
+const npv: Real = option.NPV();
+console.log(`NPV = ${npv}`); // 4.155543462156206
 ```
 
 ## release note
