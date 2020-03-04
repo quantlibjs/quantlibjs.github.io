@@ -25,9 +25,11 @@
 
 ## usage
 
-#### load from cdn
+#### load from CDN
 * latest version: https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs
+or https://unpkg.com/@quantlib/ql@latest/ql.mjs
 * version `x.y.z` : https://cdn.jsdelivr.net/npm/@quantlib/ql@x.y.z/ql.mjs
+or https://unpkg.com/@quantlib/ql@x.y.z/ql.mjs
 
 #### install from npm
 
@@ -65,6 +67,45 @@ option.setPricingEngine(engine);
 
 const npv = option.NPV();
 console.log(`NPV = ${npv}`);  // 4.155543462156206
+
+</script>
+```
+
+#### what about `UMD` format/style javascript?
+
+You may use javascript dynamic [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Dynamic_Import)
+
+```html
+<script>
+
+import('https://cdn.jsdelivr.net/npm/@quantlib/ql@latest/ql.mjs').then(module=>{
+  window.ql = module;
+  test();
+});
+
+function test() {
+  const today = ql.DateExt.UTC('7,March,2014');
+  ql.Settings.evaluationDate.set(today);
+
+  const payoff = new ql.PlainVanillaPayoff(ql.Option.Type.Call, 100.0);
+  const exercise = new ql.EuropeanExercise(ql.DateExt.UTC('7,June,2014'));
+  const option = new ql.EuropeanOption(payoff, exercise);
+
+  const u = new ql.SimpleQuote(100.0);
+  const r = new ql.SimpleQuote(0.01);
+  const s = new ql.SimpleQuote(0.2);
+
+  const riskFreeCurve = new ql.FlatForward().ffInit3(0, new ql.TARGET(), new ql.Handle(r), new ql.Actual360());
+  const volatility = new ql.BlackConstantVol().bcvInit4(0, new ql.TARGET(), new ql.Handle(s), new ql.Actual360());
+
+  const process = new ql.BlackScholesProcess(new ql.Handle(u), new ql.Handle(riskFreeCurve), new ql.Handle(volatility));
+
+  const engine = new ql.AnalyticEuropeanEngine().init1(process);
+  option.setPricingEngine(engine);
+
+  const npv = option.NPV();
+  console.log(`NPV = ${npv}`);  // 4.155543462156206
+}
 
 </script>
 ```
@@ -143,6 +184,7 @@ console.log(`NPV = ${npv}`); // 4.155543462156206
 ## release note
 | version | notes |
 | ------- | ----- |
+| 0.3.3 | fixed most `asianoption` specs |
 | 0.3.2 | fixed `swaption`, most of `short-rate models` specs and some other pricing specs, and part of `bermudanswaption` example |
 | 0.3.1 | examples code cleanup, fixed 4 examples, `global optimizers` example DE tests passed |
 | 0.3.0 | fixed 40+ pricing specs, started working on model tests  |
@@ -396,8 +438,8 @@ these are the code loaded and executed in https://quantlib.js.org
 
 ## test report
 
-v0.3.2 specs + examples status report
-total: 735, passed: 443, failed: 185, pending: 107
+v0.3.3 specs + examples status report
+total: 735, passed: 452, failed: 176, pending: 107
 
 LazyObject tests
 - [x] Testing that lazy objects discard notifications after the first...
@@ -875,19 +917,19 @@ American option tests
 - [x] Testing finite-differences shout option greeks...
 
 Asian option tests
-- [ ] Testing analytic continuous geometric average-price Asians...
-- [ ] Testing analytic continuous geometric average-price Asian greeks...
-- [ ] Testing analytic discrete geometric average-price Asians...
+- [x] Testing analytic continuous geometric average-price Asians...
+- [x] Testing analytic continuous geometric average-price Asian greeks...
+- [x] Testing analytic discrete geometric average-price Asians...
 - [x] Testing analytic discrete geometric average-strike Asians...
-- [ ] Testing Monte Carlo discrete geometric average-price Asians...
+- [x] Testing Monte Carlo discrete geometric average-price Asians...
 - [ ] Testing Monte Carlo discrete arithmetic average-price Asians...
-- [ ] Testing Monte Carlo discrete arithmetic average-strike Asians...
-- [ ] Testing discrete-averaging geometric Asian greeks...
-- [ ] Testing use of past fixings in Asian options...
-- [ ] Testing Asian options with all fixing dates in the past...
+- [x] Testing Monte Carlo discrete arithmetic average-strike Asians...
+- [x] Testing discrete-averaging geometric Asian greeks...
+- [x] Testing use of past fixings in Asian options...
+- [x] Testing Asian options with all fixing dates in the past...
 
 Asian option experimental tests
-- [ ] Testing Levy engine for Asians options...
+- [x] Testing Levy engine for Asians options...
 - [ ] Testing Vecer engine for Asian options...
 
 Barrier option tests
