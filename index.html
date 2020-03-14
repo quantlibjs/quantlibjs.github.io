@@ -118,6 +118,7 @@ today`,
             nb.add('javascript');
             nb.cells[id].setValue(code);
             nb.run(id);
+            nb.cells[id].refresh();
           } else {
             document.getElementById('notebook').contentWindow.location.reload();
           }
