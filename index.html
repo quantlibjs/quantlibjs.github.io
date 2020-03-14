@@ -91,8 +91,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
       var nb = $('iframe')[0].contentWindow;
-      var nbid = 0;
-      var iid;
       var codes = [
       `today = DateExt.UTC('7,March,2014');
 Settings.evaluationDate.set(today);
@@ -116,6 +114,14 @@ today`,
 `npv = option.NPV()`
       ];
 
+      function wait(ms){
+        var start = new Date().getTime();
+        var end = start;
+        while(end < start + ms) {
+          end = new Date().getTime();
+        }
+      }
+
       function addCell(code, id){
         if(id>11){
           clearInterval(iid);
@@ -132,12 +138,10 @@ today`,
       });
 
       $('#notebook').on('load', function(){
-        iid = setInterval(function() {
-          if(nbid <= 11){
-            addCell(codes[nbid], nbid);
-          }
-          ++nbid;
-        }, 1000);
+        for(let i=0; i<codes.length; i++){
+          wait(1000);
+          addCell(codes[i], i);
+        }
       });
       $('#api').on('load', function(){
         
