@@ -92,6 +92,7 @@
     <script>
       $(document).ready(()=>{
         $('iframe').height($(document).innerHeight());
+        $('iframe')[2].contentWindow.load('https://quantlib.js.org/test-suite/examples/swapvaluation.mjs');
       });
     </script>
   </body>
