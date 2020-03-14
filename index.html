@@ -46,7 +46,7 @@
     <div class="containter">
       <div id="carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel" data-slide-to="0" class="active" data-interval="25000"></li>
           <li data-target="#carousel" data-slide-to="1"></li>
           <li data-target="#carousel" data-slide-to="2"></li>
         </ol>
@@ -110,11 +110,8 @@ today`,
 `option.setPricingEngine(engine)`,
 `npv = option.NPV()`
       ];
+
       function addCell(code, id){
-        if(id>11){
-          clearInterval(iid);
-          return;
-        }
         nb.add('javascript');
         nb.cells[id].setValue(code);
         nb.run(id);
@@ -132,9 +129,11 @@ today`,
           }, (i+1)*1000);
         }
       });
+
       $('#api').on('load', function(){
         
       });
+
       $('#test').on('load', function(){
         $('iframe')[2].contentWindow.load('https://quantlib.js.org/examples/swapvaluation.mjs');
       });
