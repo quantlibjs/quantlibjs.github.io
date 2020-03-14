@@ -55,17 +55,17 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <iframe src="https://quantlib.js.org/notebook/#https://quantlib.js.org/intro.json" class="d-block w-100"></iframe>
+            <iframe id="notebook" src="https://quantlib.js.org/notebook/#https://quantlib.js.org/intro.json" class="d-block w-100"></iframe>
             <div class="carousel-caption d-none d-md-block">
               <a target="_blank" href="/notebook/"><h1 class="text-light">Notebook</h1></a>
               <p class="text-light">light weight notebook app to edit and run cells of code</p>
             </div>
           </div>
           <div class="carousel-item">
-            <iframe src="https://quantlib.js.org/docs/classes/_ql_methods_montecarlo_montecarlomodel_.montecarlomodel.html" class="d-block w-100"></iframe>
+            <iframe id="api" src="https://quantlib.js.org/docs/classes/_ql_methods_montecarlo_montecarlomodel_.montecarlomodel.html" class="d-block w-100"></iframe>
             <div class="carousel-caption d-none d-md-block">
               <a target="_blank" href="/docs/"><h1 class="text-primary">API document</h1></a>
-
+              <p class="text-primary">document generated from source code</p>
             </div>
           </div>
           <div class="carousel-item">
@@ -90,12 +90,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
-      var load = $('iframe')[2].contentWindow.load;
       $(document).ready(()=>{
         $('iframe').height($(document).innerHeight());
-        $(document.getElementById('test').contentWindow.document).ready(function(){
-          load('https://quantlib.js.org/test-suite/examples/swapvaluation.mjs');
-        });
+      });
+      $('#noteb0ok').on('load', function(){
+        
+      });
+      $('#api').on('load', function(){
+        
+      });
+      $('#test').on('load', function(){
+        $('iframe')[2].contentWindow.load('https://quantlib.js.org/test-suite/examples/swapvaluation.mjs');
       });
     </script>
   </body>
