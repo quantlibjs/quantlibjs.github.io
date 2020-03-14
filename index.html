@@ -114,20 +114,21 @@ today`,
 `npv = option.NPV()`
       ];
       function addCell(code, id){
-          if(id<=10){
-            nb.add('javascript');
-            nb.cells[id].setValue(code);
-            nb.run(id);
-            nb.cells[id].refresh();
-          } else {
-            document.getElementById('notebook').contentWindow.location.reload();
-          }
+        nb.add('javascript');
+        nb.cells[id].setValue(code);
+        nb.run(id);
+        nb.cells[id].refresh();
       }
       function nbDemo(){
         var id=0;
         setInterval(function() {
-          addCell(codes[id], id);
-          ++id;
+          if(id<=10){
+            addCell(codes[id], id);
+            ++id;
+          } else {
+            id = 0;
+            document.getElementById('notebook').contentWindow.location.reload();
+          }
         }, 1000);
       }
       $(document).ready(()=>{
