@@ -55,7 +55,7 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <iframe id="notebook" src="https://quantlib.js.org/notebook/#https://quantlib.js.org/intro.json" class="d-block w-100"></iframe>
+            <iframe id="notebook" src="https://quantlib.js.org/notebook/" class="d-block w-100"></iframe>
             <div class="carousel-caption d-none d-md-block">
               <a target="_blank" href="/notebook/"><h1 class="text-light">Notebook</h1></a>
               <p class="text-light">light weight notebook app to edit and run cells of code</p>
@@ -90,11 +90,78 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
+      function nbDemo(){
+        var nb = $('iframe')[2].contentWindow;
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[0].setValue(`today = DateExt.UTC('7,March,2014');
+Settings.evaluationDate.set(today);
+today`);
+          nb.run(0);
+        }, 2000);
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[1].setValue(`option = new EuropeanOption(
+  new PlainVanillaPayoff(Option.Type.Call, 100.0),
+  new EuropeanExercise(DateExt.UTC('7,June,2014'))
+)`);
+          nb.run(1);
+        }, 2000);
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[2].setValue(`u = new SimpleQuote(100.0);`);
+          nb.run(2);
+        }, 2000);
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[3].setValue(`r = new SimpleQuote(0.01);`);
+          nb.run(3);
+        }, 2000);
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[4].setValue(`sigma = new SimpleQuote(0.2);`);
+          nb.run(4);
+        }, 2000);
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[5].setValue(`riskFreeCurve = new FlatForward().ffInit3(0, new TARGET(), new Handle(r), new Actual360())`);
+          nb.run(5);
+        }, 2000);
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[6].setValue(`volatility = new BlackConstantVol().bcvInit4(0, new TARGET(), new Handle(sigma), new Actual360())`);
+          nb.run(6);
+        }, 2000);
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[7].setValue(`process = new BlackScholesProcess(
+  new Handle(u),
+  new Handle(riskFreeCurve),
+  new Handle(volatility)
+)`);
+          nb.run(7);
+        }, 2000);
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[8].setValue(`engine = new AnalyticEuropeanEngine().init1(process)`);
+          nb.run(8);
+        }, 2000);
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[9].setValue(`option.setPricingEngine(engine)`);
+          nb.run(9);
+        }, 2000);
+        setTimeout(()=>{
+          nb.add('javascript');
+          nb.cells[10].setValue(`npv = option.NPV()`);
+          nb.run(10);
+        }, 2000);
+      }
       $(document).ready(()=>{
         $('iframe').height($(document).innerHeight());
       });
       $('#noteb0ok').on('load', function(){
-        
+        nbDemo();
       });
       $('#api').on('load', function(){
         
