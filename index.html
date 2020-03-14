@@ -113,15 +113,6 @@ today`,
 `option.setPricingEngine(engine)`,
 `npv = option.NPV()`
       ];
-
-      function wait(ms){
-        var start = new Date().getTime();
-        var end = start;
-        while(end < start + ms) {
-          end = new Date().getTime();
-        }
-      }
-
       function addCell(code, id){
         if(id>11){
           clearInterval(iid);
@@ -139,8 +130,9 @@ today`,
 
       $('#notebook').on('load', function(){
         for(let i=0; i<codes.length; i++){
-          wait(1000);
-          addCell(codes[i], i);
+          setTimeout(()=>{
+            addCell(codes[i], i);
+          }, (i+1)*1000);
         }
       });
       $('#api').on('load', function(){
