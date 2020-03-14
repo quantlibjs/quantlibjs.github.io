@@ -123,11 +123,11 @@ today`,
           }
       }
       function nbDemo(){
+        var id=0;
         setInterval(function() {
-            for(let i=0;i<codes.length;i++){
-              addCell(codes[i], i);
-            }
-        }, 2000);
+          addCell(codes[id], id);
+          ++id;
+        }, 5000);
       }
       $(document).ready(()=>{
         $('iframe').height($(document).innerHeight());
