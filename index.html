@@ -131,8 +131,10 @@ today`,
         setInterval(function() {
           if(nbid <= 11){
             addCell(codes[nbid], nbid);
+            ++nbid;
+          } else {
+            ++nbid;
           }
-          ++nbid;
         }, 1000);
       });
       $('#api').on('load', function(){
