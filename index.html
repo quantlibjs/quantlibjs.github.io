@@ -92,7 +92,7 @@
     <script>
       var nb = $('iframe')[0].contentWindow;
       var nbid = 0;
-
+      var iid;
       var codes = [
       `today = DateExt.UTC('7,March,2014');
 Settings.evaluationDate.set(today);
@@ -117,6 +117,10 @@ today`,
       ];
 
       function addCell(code, id){
+        if(id>11){
+          clearInterval(iid);
+          return;
+        }
         nb.add('javascript');
         nb.cells[id].setValue(code);
         nb.run(id);
@@ -128,13 +132,11 @@ today`,
       });
 
       $('#notebook').on('load', function(){
-        setInterval(function() {
+        iid = setInterval(function() {
           if(nbid <= 11){
             addCell(codes[nbid], nbid);
-            ++nbid;
-          } else {
-            ++nbid;
           }
+          ++nbid;
         }, 1000);
       });
       $('#api').on('load', function(){
