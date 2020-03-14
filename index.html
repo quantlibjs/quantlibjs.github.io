@@ -91,6 +91,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
       var nb = $('iframe')[0].contentWindow;
+      var id=0;
       var codes = [
       `today = DateExt.UTC('7,March,2014');
 Settings.evaluationDate.set(today);
@@ -120,14 +121,10 @@ today`,
         nb.cells[id].refresh();
       }
       function nbDemo(){
-        var id=0;
         setInterval(function() {
           if(id<=10){
             addCell(codes[id], id);
             ++id;
-          } else {
-            id = 0;
-            document.getElementById('notebook').contentWindow.location.reload();
           }
         }, 1000);
       }
@@ -135,7 +132,11 @@ today`,
         $('iframe').height($(document).innerHeight());
       });
       $('#notebook').on('load', function(){
-        nbDemo();
+        setInterval(function() {
+          id = 0;
+          nbDemo();
+          document.getElementById('notebook').contentWindow.location.reload();
+        }, 60*1000);
       });
       $('#api').on('load', function(){
         
