@@ -91,7 +91,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
       var nb = $('iframe')[0].contentWindow;
-      var id=0;
+      var nbid = 0;
+
       var codes = [
       `today = DateExt.UTC('7,March,2014');
 Settings.evaluationDate.set(today);
@@ -114,25 +115,25 @@ today`,
 `option.setPricingEngine(engine)`,
 `npv = option.NPV()`
       ];
+
       function addCell(code, id){
         nb.add('javascript');
         nb.cells[id].setValue(code);
         nb.run(id);
         nb.cells[id].refresh();
       }
-      function nbDemo(){
-        setInterval(function() {
-          if(id<=11){
-            addCell(codes[id], id);
-          }
-          ++id;
-        }, 1000);
-      }
+
       $(document).ready(()=>{
         $('iframe').height($(document).innerHeight());
       });
+
       $('#notebook').on('load', function(){
-        nbDemo();
+        setInterval(function() {
+          if(nbid <= 11){
+            addCell(codes[nbid], nbid);
+          }
+          ++nbid;
+        }, 1000);
       });
       $('#api').on('load', function(){
         
