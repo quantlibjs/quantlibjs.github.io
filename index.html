@@ -69,7 +69,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <iframe src="https://quantlib.js.org/test-suite/" class="d-block w-100"></iframe>
+            <iframe id="test" src="https://quantlib.js.org/test-suite/" class="d-block w-100"></iframe>
             <div class="carousel-caption d-none d-md-block">
               <a target="_blank" href="/test-suite/"><h1 class="text-success">Test Suite</h1></a>
               <p class="text-success">Run entire test suite in your web browser</p>
@@ -92,7 +92,9 @@
     <script>
       $(document).ready(()=>{
         $('iframe').height($(document).innerHeight());
-        $('iframe')[2].contentWindow.load('https://quantlib.js.org/test-suite/examples/swapvaluation.mjs');
+        $(document.getElementById('test').contentWindow.document).ready(function(){
+          $('iframe')[2].contentWindow.load('https://quantlib.js.org/test-suite/examples/swapvaluation.mjs');
+        });
       });
     </script>
   </body>
