@@ -44,23 +44,23 @@
   </head>
   <body>
     <div class="containter">
-      <div id="carousel" class="carousel slide" data-ride="carousel">
+      <div id="slides" class="carousel slide">
         <div class="carousel-inner">
-          <div class="carousel-item active" data-interval="30000">
+          <div class="carousel-item">
             <iframe id="notebook" src="https://quantlib.js.org/notebook/" class="d-block w-100"></iframe>
             <div class="carousel-caption d-none d-md-block">
               <a target="_blank" href="/notebook/"><h1 class="text-light">Notebook</h1></a>
               <p class="text-light">light weight notebook app to edit and run cells of code</p>
             </div>
           </div>
-          <div class="carousel-item" data-interval="5000">
+          <div class="carousel-item">
             <iframe id="api" src="https://quantlib.js.org/docs/classes/_ql_methods_montecarlo_montecarlomodel_.montecarlomodel.html" class="d-block w-100"></iframe>
             <div class="carousel-caption d-none d-md-block">
               <a target="_blank" href="/docs/"><h1 class="text-primary">API document</h1></a>
               <p class="text-primary">document generated from source code</p>
             </div>
           </div>
-          <div class="carousel-item" data-interval="5000">
+          <div class="carousel-item">
             <iframe id="test" src="https://quantlib.js.org/test-suite/" class="d-block w-100"></iframe>
             <div class="carousel-caption d-none d-md-block">
               <a target="_blank" href="/test-suite/"><h1 class="text-success">Test Suite</h1></a>
@@ -107,6 +107,9 @@ today`,
 
       $(document).ready(()=>{
         $('iframe').height($(document).innerHeight());
+        $('#slides').carousel({
+          interval: 22000
+        });
       });
 
       $('#notebook').on('load', function(){
