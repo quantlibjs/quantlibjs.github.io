@@ -122,7 +122,7 @@ today`,
       }
       function nbDemo(){
         setInterval(function() {
-          if(id<=10){
+          if(id<=11){
             addCell(codes[id], id);
             ++id;
           }
@@ -132,11 +132,7 @@ today`,
         $('iframe').height($(document).innerHeight());
       });
       $('#notebook').on('load', function(){
-        setInterval(function() {
-          id = 0;
-          nbDemo();
-          document.getElementById('notebook').contentWindow.location.reload();
-        }, 60*1000);
+        nbDemo();
       });
       $('#api').on('load', function(){
         
