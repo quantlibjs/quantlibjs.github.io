@@ -137,8 +137,8 @@ option.setPricingEngine(engine);`,
       $('#api').on('load', function(){
         for(let i=0; i<docs.length; i++){
           setTimeout(()=>{
-            document.getElementById('#api').src = docs[i];
-          }, (i+1)*30000);
+            document.getElementById('api').src = docs[i];
+          }, (i+1)*10000);
         }
       });
 
@@ -146,7 +146,7 @@ option.setPricingEngine(engine);`,
         for(let i=0; i<specs.length; i++){
           setTimeout(()=>{
             $('iframe')[2].contentWindow.load(specs[i]);
-          }, (i+1)*60000);
+          }, (i+1)*10000);
         }
       });
     </script>
