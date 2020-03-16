@@ -102,12 +102,10 @@ option.setPricingEngine(engine);`,
         'https://quantlib.js.org/examples/swapvaluation.mjs',
         'https://quantlib.js.org/test-suite/instruments.mjs',
         'https://quantlib.js.org/test-suite/blackformula.mjs',
-        'https://quantlib.js.org/test-suite/brownianbridge.mjs',
-        'https://quantlib.js.org/test-suite/pathgenerator.mjs',
         'https://quantlib.js.org/test-suite/cashflows.mjs'
       ];
 
-      var docs = [
+      var apis = [
         'https://quantlib.js.org/docs/classes/_ql_methods_montecarlo_montecarlomodel_.montecarlomodel.html',
         'https://quantlib.js.org/docs/classes/_ql_termstructures_yield_piecewiseyieldcurve_.piecewiseyieldcurve.html',
         'https://quantlib.js.org/docs/classes/_ql_time_calendars_china_.china.html',
@@ -135,9 +133,9 @@ option.setPricingEngine(engine);`,
       });
 
       $('#api').on('load', function(){
-        for(let i=0; i<docs.length; i++){
+        for(let i=0; i<apis.length; i++){
           setTimeout(()=>{
-            document.getElementById('api').src = docs[i];
+            document.getElementById('api').src = apis[i];
           }, (i+1)*10000);
         }
       });
