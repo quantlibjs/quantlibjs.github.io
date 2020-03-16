@@ -64,7 +64,7 @@
             <iframe id="test" src="https://quantlib.js.org/test-suite/" class="d-block w-100"></iframe>
             <div class="carousel-caption d-none d-md-block">
               <a target="_blank" href="/test-suite/"><h1 class="text-success">Test Suite</h1></a>
-              <h2 class="text-success">Run tests & example in your web browser</h2>
+              <h2 class="text-success">Run tests & examples in your web browser</h2>
             </div>
           </div>
         </div>
@@ -83,18 +83,18 @@ today`,
   new PlainVanillaPayoff(Option.Type.Call, 100.0),
   new EuropeanExercise(DateExt.UTC('7,June,2014'))
 )`,
-`u = new SimpleQuote(100.0)`,
-`r = new SimpleQuote(0.01)`,
-`sigma = new SimpleQuote(0.2)`,
-`riskFreeCurve = new FlatForward().ffInit3(0, new TARGET(), new Handle(r), new Actual360())`,
-`volatility = new BlackConstantVol().bcvInit4(0, new TARGET(), new Handle(sigma), new Actual360())`,
+`u = new SimpleQuote(100.0);
+r = new SimpleQuote(0.01);
+sigma = new SimpleQuote(0.2);`,
+`riskFreeCurve = new FlatForward().ffInit3(0, new TARGET(), new Handle(r), new Actual360());
+volatility = new BlackConstantVol().bcvInit4(0, new TARGET(), new Handle(sigma), new Actual360());`,
 `process = new BlackScholesProcess(
   new Handle(u),
   new Handle(riskFreeCurve),
   new Handle(volatility)
 )`,
-`engine = new AnalyticEuropeanEngine().init1(process)`,
-`option.setPricingEngine(engine)`,
+`engine = new AnalyticEuropeanEngine().init1(process);
+option.setPricingEngine(engine);`,
 `npv = option.NPV()`
       ];
 
