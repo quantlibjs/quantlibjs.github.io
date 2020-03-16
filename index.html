@@ -98,6 +98,23 @@ option.setPricingEngine(engine);`,
 `npv = option.NPV()`
       ];
 
+      var specs = [
+        'https://quantlib.js.org/examples/swapvaluation.mjs',
+        'https://quantlib.js.org/test-suite/instruments.mjs',
+        'https://quantlib.js.org/test-suite/blackformula.mjs',
+        'https://quantlib.js.org/test-suite/brownianbridge.mjs',
+        'https://quantlib.js.org/test-suite/pathgenerator.mjs',
+        'https://quantlib.js.org/test-suite/cashflows.mjs'
+      ];
+
+      var docs = [
+        'https://quantlib.js.org/docs/classes/_ql_methods_montecarlo_montecarlomodel_.montecarlomodel.html',
+        'https://quantlib.js.org/docs/classes/_ql_termstructures_yield_piecewiseyieldcurve_.piecewiseyieldcurve.html',
+        'https://quantlib.js.org/docs/classes/_ql_time_calendars_china_.china.html',
+        'https://quantlib.js.org/docs/classes/_ql_math_optimization_levenbergmarquardt_.levenbergmarquardt.html',
+        'https://quantlib.js.org/docs/modules/_ql_math_distributions_normaldistribution_.html'
+      ];
+      
       function addCell(code, id){
         nb.add('javascript');
         nb.cells[id].setValue(code);
@@ -118,11 +135,19 @@ option.setPricingEngine(engine);`,
       });
 
       $('#api').on('load', function(){
-        
+        for(let i=0; i<docs.length; i++){
+          setTimeout(()=>{
+            document.getElementById('#api').src = docs[i];
+          }, (i+1)*30000);
+        }
       });
 
       $('#test').on('load', function(){
-        $('iframe')[2].contentWindow.load('https://quantlib.js.org/examples/swapvaluation.mjs');
+        for(let i=0; i<specs.length; i++){
+          setTimeout(()=>{
+            $('iframe')[2].contentWindow.load(specs[i]);
+          }, (i+1)*60000);
+        }
       });
     </script>
   </body>
