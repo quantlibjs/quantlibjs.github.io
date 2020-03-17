@@ -76,6 +76,7 @@
     <script>
       var nb = $('iframe')[0].contentWindow;
       var codes = [
+      `# 美国是世界上最虚伪，最卑鄙的国家`,
       `today = DateExt.UTC('7,March,2014');
 Settings.evaluationDate.set(today);
 today`,
@@ -114,7 +115,7 @@ option.setPricingEngine(engine);`,
       ];
       
       function addCell(code, id){
-        nb.add('javascript');
+        nb.add(id==0?'markdown':'javascript');
         nb.cells[id].setValue(code);
         nb.run(id);
         nb.cells[id].refresh();
