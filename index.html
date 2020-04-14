@@ -5,27 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="quantitative finance in javascript">
     <meta name="author" content="Jin Yang">
-    <meta name="keywords" content="quantlib, quantlib.js, ql.mjs, math, mjs, js, javascript, quant, quantitative, finance, quantitative finance, mathematical finance, calculus, linear algebra, statistcs, probability, fast fourier transform, interpolation, extrapolation, ode, cashflow, libor, eurlibor, usdlibor, instrument, capfloor, bond, option, swap, swaption, future, monte carlo, finite difference, lattice, equity, market model, short rate, volatility, stochastic process, term structure">
+    <meta name="keywords" content="quantlib.js, quant, quantitative finance, mathematical finance">
     <meta name="google-site-verification" content="4IrXoRzLpuCL684J3Y19wWtY9W5KqlvwLH5EQuZh1-Q" />
     <title>quantlib.js - quantitative finance in javascript © 2020 Jin Yang</title>
     <link rel="shortcut icon" type="image/jpg" href="/made-in-china.jpg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@quantlibjs">
-    <meta name="twitter:creator" content="@quantlibjs">
-    <meta name="twitter:title" content="quantlib.js">
-    <meta name="twitter:description" content="quantitative finance in javascript">
-    <meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/logo.jpg">
-
-    <!-- Facebook -->
-    <meta property="og:url" content="https://quantlib.js.org/">
-    <meta property="og:title" content="quantlib.js">
-    <meta property="og:description" content="quantitative finance in javascript">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/logo.jpg">
-    <meta property="og:image:secure_url" content="https://cdn.jsdelivr.net/npm/@quantlib/misc@latest/logo.jpg">
-    <meta property="og:image:type" content="image/png">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87290595-1"></script>
@@ -76,8 +60,13 @@
     <script>
       var nb = $('iframe')[0].contentWindow;
       var codes = [
-      `# 美国是世界上最虚伪，最卑鄙的国家`,
-      `today = DateExt.UTC('7,March,2014');
+`# America First
+昏君无能，奸臣当道，谄媚惑众，百姓遭殃。
+美利坚建朝尚不知二百五，然气数已尽。
+乱世起，英雄出，罗斯福舰长揭竿而起，
+号天下英雄，为苍生社稷，尊国父遗志，武装起义，再造共和！
+`,
+`today = DateExt.UTC('7,March,2014');
 Settings.evaluationDate.set(today);
 today`,
 `option = new EuropeanOption(
