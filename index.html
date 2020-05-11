@@ -7,6 +7,7 @@
     <meta name="author" content="Jin Yang">
     <meta name="keywords" content="quantlib.js, 量化金融, 金融, quant, quantitative finance, mathematical finance">
     <meta name="google-site-verification" content="4IrXoRzLpuCL684J3Y19wWtY9W5KqlvwLH5EQuZh1-Q" />
+    <meta name="baidu-site-verification" content="5VJ5ngbcQy" />
     <title>quantlib.js - 量化金融 - quantitative finance in javascript - 武统台湾，留岛不留人 © 2020 Jin Yang</title>
     <link rel="shortcut icon" type="image/png" href="/cn.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -37,11 +38,19 @@
       iframe {
         border: 0px;
       }
+      .carousel-indicators {
+        background-color: #191d21;
+      }
     </style>
   </head>
   <body>
     <div class="containter">
       <div id="slides" class="carousel slide" data-ride="carousel"> 
+        <ol class="carousel-indicators">
+          <li data-target="#slides" data-slide-to="0" class="active"></li>
+          <li data-target="#slides" data-slide-to="1"></li>
+          <li data-target="#slides" data-slide-to="2"></li>
+        </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
             <iframe id="notebook" src="https://quantlib.js.org/notebook/" class="d-block w-100"></iframe>
@@ -53,15 +62,15 @@
           <div class="carousel-item">
             <iframe id="api" src="https://quantlib.js.org/docs/classes/_ql_methods_montecarlo_montecarlomodel_.montecarlomodel.html" class="d-block w-100"></iframe>
             <div class="carousel-caption d-none d-md-block">
-              <a target="_blank" href="/docs/"><h1 class="text-primary">API document</h1></a>
-              <h2 class="text-primary">generated from source code</h2>
+              <a target="_blank" href="/docs/"><h1 class="text-dark">API Document</h1></a>
+              <h2 class="text-dark">generated from source code</h2>
             </div>
           </div>
           <div class="carousel-item">
             <iframe id="test" src="https://quantlib.js.org/test-suite/" class="d-block w-100"></iframe>
             <div class="carousel-caption d-none d-md-block">
-              <a target="_blank" href="/test-suite/"><h1 class="text-success">Test Suite</h1></a>
-              <h2 class="text-success">Run tests & examples in your web browser</h2>
+              <a target="_blank" href="/test-suite/"><h1 class="text-dark">Test Suite</h1></a>
+              <h2 class="text-dark">Run tests & examples in your web browser</h2>
             </div>
           </div>
         </div>
@@ -81,7 +90,13 @@
             "background": "#ff0000"
           }
         },
-        "position": "bottom-right"
+        "position": "bottom-right",
+        "content": {
+          "message": "This website uses cookies to ensure you get the best experience on our website.",
+          "dismiss": "武统台湾，留岛不留人！",
+          "link": "勿謂言之不預也",
+          "href": "https://quantlib.js.org/"
+        }
       });
     </script>
     <script>
