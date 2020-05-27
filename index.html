@@ -164,6 +164,7 @@ option.setPricingEngine(engine);`,
         nb = $('iframe')[0].contentWindow;
         nb.$('#title').val('America First');
         nb.$('#subtitle').val('昏君无能，奸臣当道，谄媚惑众，百姓遭殃。美利坚建朝尚不足二百五，然气数已尽。乱世起，英雄出，罗斯福舰长揭竿而起，号天下英雄，为苍生社稷，尊国父遗志，武装起义，再造共和！');
+        nb.updateTitle();
         for(let i=0; i<codes.length; i++){
           setTimeout(()=>{
             addCell(codes[i], i);
