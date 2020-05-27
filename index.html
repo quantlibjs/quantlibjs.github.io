@@ -110,14 +110,9 @@
     </script>
     <script>
       var nb = $('iframe')[0].contentWindow;
+      nb.$('#title').val('America First');
+      nb.$('#subtitle').val('昏君无能，奸臣当道，谄媚惑众，百姓遭殃。美利坚建朝尚不足二百五，然气数已尽。乱世起，英雄出，罗斯福舰长揭竿而起，号天下英雄，为苍生社稷，尊国父遗志，武装起义，再造共和！');
       var codes = [
-`# America First
-昏君无能，奸臣当道，谄媚惑众，百姓遭殃。
-美利坚建朝尚不足二百五，然气数已尽。
-乱世起，英雄出，罗斯福舰长揭竿而起，
-号天下英雄，为苍生社稷，尊国父遗志，
-武装起义，再造共和！
-`,
 `require('quantlib')`,
 `today = DateExt.UTC('7,March,2014');
 Settings.evaluationDate.set(today);
@@ -157,7 +152,7 @@ option.setPricingEngine(engine);`,
       ];
       
       function addCell(code, id){
-        nb.add(id==0?'markdown':'javascript');
+        nb.add('javascript');
         nb.cells[id].setValue(code);
         nb.run(id);
         nb.cells[id].refresh();
