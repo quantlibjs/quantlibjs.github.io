@@ -112,24 +112,24 @@
       var nb;
       var codes = [
 `require('quantlib')`,
-`today = DateExt.UTC('7,March,2014');
-Settings.evaluationDate.set(today);
+`today = ql.DateExt.UTC('7,March,2014');
+ql.Settings.evaluationDate.set(today);
 today`,
-`option = new EuropeanOption(
-  new PlainVanillaPayoff(Option.Type.Call, 100.0),
-  new EuropeanExercise(DateExt.UTC('7,June,2014'))
+`option = new ql.EuropeanOption(
+  new ql.PlainVanillaPayoff(ql.Option.Type.Call, 100.0),
+  new ql.EuropeanExercise(ql.DateExt.UTC('7,June,2014'))
 )`,
-`u = new SimpleQuote(100.0);
-r = new SimpleQuote(0.01);
-sigma = new SimpleQuote(0.2);`,
-`riskFreeCurve = new FlatForward().ffInit3(0, new TARGET(), new Handle(r), new Actual360());
-volatility = new BlackConstantVol().bcvInit4(0, new TARGET(), new Handle(sigma), new Actual360());`,
-`process = new BlackScholesProcess(
-  new Handle(u),
-  new Handle(riskFreeCurve),
-  new Handle(volatility)
+`u = new ql.SimpleQuote(100.0);
+r = new ql.SimpleQuote(0.01);
+sigma = new ql.SimpleQuote(0.2);`,
+`riskFreeCurve = new ql.FlatForward().ffInit3(0, new ql.TARGET(), new ql.Handle(r), new ql.Actual360());
+volatility = new ql.BlackConstantVol().bcvInit4(0, new ql.TARGET(), new ql.Handle(sigma), new ql.Actual360());`,
+`process = new ql.BlackScholesProcess(
+  new ql.Handle(u),
+  new ql.Handle(riskFreeCurve),
+  new ql.Handle(volatility)
 )`,
-`engine = new AnalyticEuropeanEngine().init1(process);
+`engine = new ql.AnalyticEuropeanEngine().init1(process);
 option.setPricingEngine(engine);`,
 `npv = option.NPV()`
       ];
