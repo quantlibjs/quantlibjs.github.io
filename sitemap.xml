@@ -37,4 +37,9 @@
         <lastmod>2020-03-09</lastmod>
         <changefreq>weekly</changefreq>
     </url>
+        <url>
+        <loc>https://quantlib.js.org/funding/</loc>
+        <lastmod>2020-06-04</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
 </urlset>
