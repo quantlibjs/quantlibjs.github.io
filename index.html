@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="量化金融 - quantitative finance in javascript">
     <meta name="author" content="Jin Yang">
-    <meta name="keywords" content="quantlib.js, 量化金融, 金融, quant, quantitative finance, mathematical finance, 北美奴隶制种族灭绝反人类匪帮必须被毁灭">
+    <meta name="keywords" content="quantlib.js, 量化金融, 金融, quant, quantitative finance, mathematical finance">
     <meta name="google-site-verification" content="4IrXoRzLpuCL684J3Y19wWtY9W5KqlvwLH5EQuZh1-Q" />
     <meta name="baidu-site-verification" content="5VJ5ngbcQy" />
     <meta name="yandex-verification" content="4e77f9532725d40e" />
@@ -53,7 +53,6 @@
           <li data-target="#slides" data-slide-to="0" class="active"></li>
           <li data-target="#slides" data-slide-to="1"></li>
           <li data-target="#slides" data-slide-to="2"></li>
-          <li data-target="#slides" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -75,13 +74,6 @@
             <div class="carousel-caption d-none d-md-block">
               <a target="_blank" href="/test-suite/"><h1 class="text-dark">Test Suite</h1></a>
               <h2 class="text-dark">Run tests & examples in your web browser</h2>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <iframe id="test" src="https://quantlib.js.org/funding/" class="d-block w-100"></iframe>
-            <div class="carousel-caption d-none d-md-block">
-              <a target="_blank" href="/funding/"><h1 class="text-dark">Donate</h1></a>
-              <h2 class="text-dark">Consider donate to make quantlib.js better</h2>
             </div>
           </div>
         </div>
@@ -151,8 +143,8 @@ option.setPricingEngine(engine);`,
 
       $('#notebook').on('load', function(){
         nb = $('iframe')[0].contentWindow;
-        nb.$('#title').val('#BlackLivesMatter #StopAsianHate');
-        nb.$('#subtitle').val('昏君无能，奸臣当道，谄媚惑众，百姓遭殃。美利坚建朝尚不足二百五，然气数已尽。乱世起，英雄出，罗斯福舰长揭竿而起，号天下英雄，为苍生社稷，尊国父遗志，武装起义，再造共和！');
+        nb.$('#title').val('example');
+        nb.$('#subtitle').val('this is an example');
         nb.updateTitle();
         for(let i=0; i<codes.length; i++){
           setTimeout(()=>{
