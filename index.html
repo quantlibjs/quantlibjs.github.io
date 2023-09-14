@@ -143,8 +143,8 @@ option.setPricingEngine(engine);`,
 
       $('#notebook').on('load', function(){
         nb = $('iframe')[0].contentWindow;
-        nb.$('#title').val('example');
-        nb.$('#subtitle').val('this is an example');
+        nb.$('#title').val('quantlib.js');
+        nb.$('#subtitle').val('quantitative finance in javascript');
         nb.updateTitle();
         for(let i=0; i<codes.length; i++){
           setTimeout(()=>{
